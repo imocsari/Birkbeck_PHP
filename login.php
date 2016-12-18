@@ -1,14 +1,19 @@
-<div id="main">
-<h1>PHP Login Session Example</h1>
-<div id="login">
-<h2>Login Form</h2>
-<form action="" method="post">
-<label>UserName :</label>
-<input id="name" name="username" placeholder="username" type="text">
-<label>Password :</label>
-<input id="password" name="password" placeholder="**********" type="password">
-<input name="submit" type="submit" value=" Login ">
-<span><?php echo $error; ?></span>
+<?php
+// simple login form
+
+$username = 'admin';
+$password = '1234';
+
+if ( $_POST['username'] !== $username || $_POST['password'] !== $password ) { ?>
+
+<h1>Member Login</h1>
+<p>Please enter your credentials:</p>
+<form name="form" method="post" action="content/DTresults.html">
+	<p><label for="username">Username:</label><input type="text"     title="username" name="username" /></p>
+	<p><label for="password">Password:</label><input type="password" title="password" name="password" /></p>
+	<p><input type="submit" name="submit" value="Login" /></p>
 </form>
-</div>
-</div>
+
+<?php } else {
+
+} ?>
