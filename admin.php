@@ -18,4 +18,7 @@
   </div>
 </div>
 
+<?php
+
+
 <?php include("layouts/footer.php"); ?>
