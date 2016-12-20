@@ -12,7 +12,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.jpg" "width="300" height="80"" />
+    <img src="images/logo.jpg" "width="100" height="80"" />
   </a>
 
   <!-- Right Navigation -->
