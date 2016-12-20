@@ -3,7 +3,8 @@
 CSS Settings For HTML Div ExactCenter
 ------------------------------------------------*/
 body {
-  color: blue;
+  background-image: url('images/background.jpg');
+  background-size: cover;
 }
 #main {
 width:960px;
@@ -72,4 +73,14 @@ color:#6495ed
 }
 i {
 color:#6495ed
+}
+
+.list {
+  font-size: 35px;
+  font-weight: bold;
+
+}
+
+.list a {
+  color: #EAF0CE;
 }

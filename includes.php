@@ -21,7 +21,7 @@ class Login
           $_SESSION['username'] = $this->username;
           $_SESSION['password'] = $this->password;
           $_SESSION['is_auth'] = true;
-          $_SESSION['username'] == 'admin'  ? (header("Location: private.php")) : (header("Location: index.php"));
+          $_SESSION['username'] == 'admin'  ? (header("Location: private.php")) : (header("Location: afterlogin.php"));
           die();
 
         } else {

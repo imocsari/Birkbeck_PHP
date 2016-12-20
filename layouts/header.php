@@ -12,20 +12,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/lewagon.png" />
+    <img src="images/logo.jpg width="200px" height="100px"" />
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
     <!-- Text link -->
     <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
 
@@ -53,7 +44,7 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <a href="login.php" class=" btn-primary">Intranet</a>
+    <a href="login.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
     <a href="login.php" class="navbar-wagon-item navbar-wagon-button btn">Admin</a>
   </div>
 
