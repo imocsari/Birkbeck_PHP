@@ -28,7 +28,7 @@ include("layouts/header.php");
              </div>
            </div>
            <div class="col-xs-12 col-sm-4">
-             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/uni2.jpg');background-size: 100%;">
+             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2) ), url('images/uni2.jpg');background-size: 100%;">
                <div class="card-category">Brussels</div>
                <div class="card-description">
                  <h2>Anne's home</h2>
