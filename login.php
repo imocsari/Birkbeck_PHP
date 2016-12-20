@@ -15,23 +15,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<section class="loginform">
-    <form name="login" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" accept-charset="utf-8">
+<body >
+<div class="container">
+<div class="row">
+  <div id="box">
+    <form class="formbox"name="login" method="post" accept-charset="utf-8">
         <ul>
+
             <li>
-                <label for="usermail">Email</label>
-                <input type="username" name="username" placeholder="Please enter the username" required>
+                <label for="username">Please enter your username!</label>
             </li>
             <li>
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="password" required></li>
+                <input type="text" name="username" placeholder="username">
+            </li>
             <li>
+                <label for="password">Please enter your password!</label>
+            </li>
+            <li>
+                <input type="password" name="password" placeholder="password">
+            </li>
+            <li id="loginbutton">
                 <input type="submit" value="Login">
             </li>
         </ul>
     </form>
-</section>
+</div>
+</div>
+</div>
 </body>
 <?php include 'layouts/footer.php'; ?>
 </html>
