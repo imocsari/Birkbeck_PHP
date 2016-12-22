@@ -17,8 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<section class="loginform text-center">
-    <center>
+<section class="loginform text-right">
         <br>
         <?php
         if (!isset($_SESSION['is_auth'])) :
@@ -35,10 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         endif;
         ?>
         <br>
-    </center>
 </section>
+<div class="text-center">
 <form action="myform.php" method="POST">
-  Title:
+  <label for="title">Title</label><br>
   <select name="title">
       <option selected disabled>Choose one</option>
       <option value="Mr">Mr.</option>
@@ -48,12 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <option value="Prof">Prof.</option>
   </select>
 <br/>
-  First Name: <input type="text" name="firstname" placeholder="Stephen"/><br/>
-  Surname: <input type="text" name="surname" placeholder="Hawking"/><br/>
-  Email: <input type="text" name="email" placeholder="stephenhawking@yahoo.co.uk" /><br/>
-  Username: <input type="text" name="username" placeholder="username"/><br/>
-  Password: <input type="text" name="password" placeholder="********"/><br/>
+  <label for="firstname">Enter first name!</label><br>
+  <input type="text" name="firstname" placeholder="Stephen"/><br/>
+  <label for="surname">Enter surname!</label><br>
+  <input type="text" name="surname" placeholder="Hawking"/><br/>
+  <label for="email">Enter an e-mail address!</label><br>
+  <input type="text" name="email" placeholder="stephenhawking@yahoo.co.uk" /><br/>
+  <label for="username">Enter a username!</label><br>
+  <input type="text" name="username" placeholder="username"/><br/>
+  <label for="password">Enter a password!</label><br>
+  <input type="text" name="password" placeholder="********"/><br/>
 <p><input type="submit" value="Submit"></p>
 </form>
+</div>
 </body>
 </html>
