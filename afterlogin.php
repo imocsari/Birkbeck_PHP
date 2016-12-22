@@ -1,8 +1,8 @@
 <?php
+
+require_once 'includes.php';
 include("layouts/header.php");
-
 session_start();
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $login = (new Login())->logout();
@@ -22,25 +22,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    <br>
    <body>
      <section class="loginform">
-             <br>
-             <?php
-             if (!isset($_SESSION['is_auth'])) :
-                 echo '<div class="text-center"><b>login Required! you will redirect to login page</b></div>';
-                 header("refresh:3; url=login.php");
-                 die;
-             else:
-                 $r = '<b><div class="text-center">' . 'Welcome ' . $_SESSION['username'] . ' to Dasboard </b></div>';
-                 $r .= '
-            <div class="text-center" id="logoutbutton">
-             <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-                 <input type="submit" value="Logout">
-             </form>
-            </div>';
-
-                 echo $r;
-             endif;
-             ?>
-             <br>
+       <br>
+       <?php
+       if (!isset($_SESSION['is_auth'])) :
+           echo '<div text-center><b>Login Required!</b></div>';
+           header("refresh:3; url=login.php");
+           die;
+       else:
+           $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+           $r .= '
+       <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
+           <div class="text-center"><input type="submit" value="Logout"></div>
+       </form>';
+          echo $r;
+       endif;
+       ?>
+       <br>
      </section>
       <h2 class="text-center">INTRANET</h2>
        <div class="container">

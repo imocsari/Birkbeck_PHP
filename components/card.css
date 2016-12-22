@@ -63,6 +63,11 @@ margin-top:15px;
 text-align: center;
 }
 
-b {
-  color:white;
+
+.welcome {
+  font-size: 35px;
+  opacity: 0.5;
+  background-color: white;
+  display: block;
+  text-align: center;
 }

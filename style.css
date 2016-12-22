@@ -52,6 +52,8 @@ cursor:pointer;
 border-radius:5px;
 margin-bottom:15px;
 margin-top:15px;
+margin-right: 20px;
+text-align: center;
 }
 
 li {
@@ -104,4 +106,19 @@ select {
   height: 60px;
   width: 170px;
   font-weight: bold;
+}
+.welcome {
+  font-size: 35px;
+  opacity: 0.5;
+  background-color: white;
+  display: block;
+  text-align: center;
+}
+
+.logout {
+  text-align: center;
+
+}
+.loginform {
+  text-align: center;
 }

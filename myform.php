@@ -7,6 +7,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
     }
     else {
         echo "<h2>Thank you for the information!</h2>";
+         header("refresh:3; url=login.php");
     }
 }
 else {

@@ -18,18 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<section class="loginform"style="width:800px;">
+<section class="loginform">
         <br>
         <?php
         if (!isset($_SESSION['is_auth'])) :
-            echo '<div text-center><b>login Required!</b></div>';
+            echo '<div text-center><b>Login Required!</b></div>';
             header("refresh:3; url=login.php");
             die;
         else:
-            $r = '<div class="text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Dasboard </b></div>';
+            $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
             $r .= '
-        <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-            <input type="submit" value="Logout">
+            <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
+            <div class="text-right"><input type="submit" value="Logout"></div>
         </form>';
             echo $r;
         endif;
