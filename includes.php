@@ -1,5 +1,4 @@
 <?php
-
 class Login
 {
     public $username;
@@ -21,13 +20,17 @@ class Login
           $_SESSION['username'] = $this->username;
           $_SESSION['password'] = $this->password;
           $_SESSION['is_auth'] = true;
-          $_SESSION['username'] == 'admin'  ? (header("Location: private.php")) : (header("Location: afterlogin.php"));
+            if ($_SESSION['username'] == 'admin'){
+              header("Location: private.php");
+            }
+            else {
+              header("Location: afterlogin.php");
+            }
           die();
-
         } else {
-            echo '<b>Invalid Username Or Password!</b><br>';
-            echo '<b>Redirect To login Page</b>';
-            header("refresh:1; url=login.php");
+            echo '<div text-center>wrong Username Or Password!</div><br>';
+            echo '<b>Please enter again!</b>';
+            header("refresh:2; url=login.php");
             die;
         }
     }
@@ -51,7 +54,9 @@ class Login
             $this->u = @(strtolower($row_user[0]));
             $this->p = @trim(strtolower($row_user[1]), "\r");
 
-            if (strcmp($this->u, $this->username) === 0 && strcmp($this->p, $this->password) === 0) {
+            if (empty(($_POST['username']) || ($_POST['password']))) {
+                return false;
+          } elseif (strcmp($this->u, $this->username) === 0 && strcmp($this->p, $this->password) === 0) {
                 return true;
             }
         }

@@ -6,7 +6,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         die('There was an error writing this file');
     }
     else {
-        echo "$ret bytes written to file";
+        echo "<h2>Thank you for the information!</h2>";
     }
 }
 else {
