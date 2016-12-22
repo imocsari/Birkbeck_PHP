@@ -94,8 +94,14 @@ color:#6495ed
 label {
   font-size: 22px;
   padding-top: 10px;
+  color: #FFBC00;
 }
 
 option {
   font-size: 18px;
+}
+select {
+  height: 60px;
+  width: 170px;
+  font-weight: bold;
 }

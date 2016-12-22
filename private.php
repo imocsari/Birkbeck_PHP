@@ -1,5 +1,6 @@
 <?php
 require_once 'includes.php';
+include("layouts/header.php");
 
 session_start();
 
@@ -61,4 +62,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 </div>
 </body>
+<?php include("layouts/footer.php"); ?>
 </html>
