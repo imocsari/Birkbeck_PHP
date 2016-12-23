@@ -1,71 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
-class Login
-{
-    public $username;
-    public $password;
-    public $u;
-    public $p;
-    public $data;
-
-
-    public function __construct()
-    {
-        $this->username = @htmlentities(strtolower($_POST['username']));
-        $this->password = @htmlentities(strtolower($_POST['password']));
-    }
-
-    public function login()
-    {
-        if ($this->verify()) {
-          $_SESSION['username'] = $this->username;
-          $_SESSION['password'] = $this->password;
-          $_SESSION['is_auth'] = true;
-            if ($_SESSION['username'] == 'admin'){
-              header("Location: private.php");
-            }
-            else {
-              header("Location: afterlogin.php");
-            }
-          die();
-        } else {
-            echo '<div text-center>wrong Username Or Password!</div><br>';
-            echo '<b>Please enter again!</b>';
-            header("refresh:2; url=login.php");
-            die;
-        }
-    }
-
-    public function logout()
-    {
-        session_start();
-        session_unset();
-        header("Location: login.php");
-        die();
-    }
-
-    public function verify()
-    {
-        $d = file_get_contents("users.txt");
-        $data = explode("\n", $d);
-
-        foreach ($data as $row => $data) {
-
-            $row_user = explode(',', $data);
-            $this->u = @(strtolower($row_user[0]));
-            $this->p = @trim(strtolower($row_user[1]), "\r");
-
-            if (empty(($_POST['username']) || ($_POST['password']))) {
-                return false;
-          } elseif (strcmp($this->u, $this->username) === 0 && strcmp($this->p, $this->password) === 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-}
-
-
 /* function definitions for validating form data; these could go in an include file to make this more readable*/
 function validTitle($title) { 
 /* 	Field is required
@@ -157,7 +91,14 @@ function validTitle($title) {
 			return true;
 		}
 ?>
-<?php
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Sign Up to our Mailing List!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Sign Up to Our Mailing List!</h1>
+    <?php
 			$self = htmlentities($_SERVER['PHP_SELF']); #get the path and file name of this file; always Escape first using htmlentities()
 			#echo '<p>This file is : ' . $self . '</p>'; #DEBUG test to see if correct self file name assigned
 			$form_is_submitted = false; #indicates whether the form in this file has been submitted
@@ -332,5 +273,76 @@ function validTitle($title) {
 				} else {
 					$passwordError = '';
 				}
-      }
-?>	
+				
+		#MUST CLOSE THE PHP BLOCK here to include form html as part of this else block, otherwise form wil not hide when valid data is submitted
+		?>
+				<!-- this section of HTML and PHP code is responsible for (re)displying the FORM and must be in the PHP (re)display form else block --> 
+				<!-- $self is set at the start of the main php block above and ensures form data is submitted to this page -->
+				<form action="<?php echo $self; ?>" method="post"> <!-- This file will receive the data; post means data will be passed to server as a seperate file -->
+					<fieldset>
+					<legend>Sign Up</legend>
+						<!-- important to use meaningful names for the name tags, as they are the $_POST array keys -->
+						<!-- NOTE THE ADDITION OF THE DATA ERROR VARIABLES -->
+						<div>
+							<label for="user">Title</label>
+							<input value="<?php echo $title ?>" 
+											type="text" 
+											name="title" 
+											id="user" 
+											size="10"/>
+											<?php echo '<span style="color:red">' . $titleError . '</span>'?>
+						</div>
+						<div>
+							<label for="user">Firstname</label>
+							<input value="<?php echo $firstname ?>" 
+											type="text" 
+											name="firstname" 
+											id="user" 
+											size="35"/>
+											<?php echo '<span style="color:red">' . $firstnameError . '</span>'?>
+						</div>
+            <div>
+              <label for="user">Surname</label>
+              <input value="<?php echo $surname ?>" 
+                      type="text" 
+                      name="surname" 
+                      id="user" 
+                      size="35"/>
+                      <?php echo '<span style="color:red">' . $surnameError . '</span>'?>
+            </div>
+						<div>            
+							<label for="email">Email</label>
+							<input value="<?php echo $email ?>" 
+											type="text" 
+											name="email" 
+											id="email" size="40"/>
+											<?php echo '<span style="color:red">' . $emailError . '</span>'?>
+						</div>
+						<div>
+							<label for="user">Username</label>
+							<input value="<?php echo $username ?>" 
+											type="text" 
+											name="username" 
+											id="user" 
+											size="35"/>
+											<?php echo '<span style="color:red">' . $usernameError . '</span>'?>
+						</div>
+						<div>
+							<label for="user">Password</label>
+							<input value="<?php echo $password ?>" 
+											type="text" 
+											name="password" 
+											id="user" 
+											size="35"/>
+											<?php echo '<span style="color:red">' . $passwordError . '</span>'?>
+						</div>
+						<div>            
+							<input type="submit" name="SubmitStatus" value="Submit" />
+						</div>
+					</fieldset>
+				</form>
+		<?php
+			} #this closes the else (re)display php block which includes the relevant html
+		?>
+    </body>
+</html>

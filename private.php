@@ -4,12 +4,12 @@ include("layouts/header.php");
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $login = (new Login())->logout();
-    die;
-}
-?>
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// 
+//     $login = (new Login())->logout();
+//     die;
+// }
+// ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,23 +21,86 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <section class="loginform">
         <br>
         <?php
-        if (!isset($_SESSION['is_auth'])) :
-            echo '<div text-center><b>Login Required!</b></div>';
-            header("refresh:3; url=login.php");
-            die;
-        else:
-            $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
-            $r .= '
-            <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-            <div class="text-right"><input type="submit" value="Logout"></div>
-        </form>';
-            echo $r;
-        endif;
+        // if (!isset($_SESSION['is_auth'])) :
+        //     echo '<div text-center><b>Login Required!</b></div>';
+        //     header("refresh:3; url=login.php");
+        //     die;
+        // else:
+        //     $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
+        //     $r .= '
+        //     <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
+        //     <div class="text-right"><input type="submit" value="Logout"></div>
+        // </form>';
+        //     echo $r;
+        // endif;
         ?>
         <br>
 </section>
 <div class="text-center">
-<form action="myform.php" method="POST">
+  <form action="<?php echo $self; ?>" method="post"> <!-- This file will receive the data; post means data will be passed to server as a seperate file -->
+    <fieldset>
+    <legend>Sign Up</legend>
+      <!-- important to use meaningful names for the name tags, as they are the $_POST array keys -->
+      <!-- NOTE THE ADDITION OF THE DATA ERROR VARIABLES -->
+      <div>
+        <label for="title">Title</label>
+        <input value="<?php echo $title ?>" 
+                type="text" 
+                name="title" 
+                id="title" 
+                size="10"/>
+                <?php echo '<span style="color:red">' . $titleError . '</span>'?>
+      </div>
+      <div>
+        <label for="firstname">Firstname</label>
+        <input value="<?php echo $firstname ?>" 
+                type="text" 
+                name="firstname" 
+                id="firstname" 
+                size="35"/>
+                <?php echo '<span style="color:red">' . $firstnameError . '</span>'?>
+      </div>
+      <div>
+        <label for="surname">Surname</label>
+        <input value="<?php echo $surname ?>" 
+                type="text" 
+                name="surname" 
+                id="surname" 
+                size="35"/>
+                <?php echo '<span style="color:red">' . $surnameError . '</span>'?>
+      </div>
+      <div>            
+        <label for="email">Email</label>
+        <input value="<?php echo $email ?>" 
+                type="text" 
+                name="email" 
+                id="email" size="40"/>
+                <?php echo '<span style="color:red">' . $emailError . '</span>'?>
+      </div>
+      <div>
+        <label for="username">Username</label>
+        <input value="<?php echo $username ?>" 
+                type="text" 
+                name="username" 
+                id="username" 
+                size="35"/>
+                <?php echo '<span style="color:red">' . $usernameError . '</span>'?>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input value="<?php echo $password ?>" 
+                type="text" 
+                name="password" 
+                id="password" 
+                size="35"/>
+                <?php echo '<span style="color:red">' . $passwordError . '</span>'?>
+      </div>
+      <div>            
+        <input type="submit" name="SubmitStatus" value="Submit" />
+      </div>
+    </fieldset>
+  </form>
+<!-- <form action="myform.php" method="POST">
   <label for="title">Title</label><br>
   <select name="title">
       <option selected disabled>Choose one</option>
@@ -59,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <label for="password">Enter a password!</label><br>
   <input type="text" name="password" placeholder="********"/><br/>
 <p><input type="submit" value="Submit"></p>
-</form>
+</form> -->
 </div>
 </body>
 <?php include("layouts/footer.php"); ?>

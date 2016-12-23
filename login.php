@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div id="box">
 
     <form class="formbox"name="login" method="post" accept-charset="utf-8">
-        <ul>
+        <!-- <ul>
 
             <li>
                 <label for="username">Please enter your username!</label>
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li id="loginbutton">
                 <input type="submit" value="Login">
             </li>
-        </ul>
+        </ul> -->
     </form>
 </div>
 </div>

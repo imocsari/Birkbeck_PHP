@@ -1,18 +1,3 @@
 admin,12
 fradi,12
-mirazilzah,sukasukahati
-hanasalwa,BunyiGiar1010
-angelinejolie,diwaktumalambulanmengambang
-jannanick,cubatekakalau pandai
-mariaozawa,kakibotol
-fradi,fradi,fradi,Mr,fradi,fradi
-hulye,vagy,jgsjglj,,asdfds,dfgjlg
-zoli,asd,zoltan@akiraly.com,Mr,Zoltan,Gera
-,,asdfa,Mr,sda,sadfa
-barni,barni,fasdf@DSF.COM,Mr,zoli,gera
-imocsari,123456,imremocsari@yahoo.com,Mr,Imre,Mocsari
-imocsari,123456,imremocsari@yahoo.com,Mr,Imre,Mocsarihajra,fradi,jasdljf@dfsdfa.com,Mr,fradi,imre
-hajra,fradi,jasdljf@dfsdfa.com,Mr,fradi,imre
-asdaga,143245,fasdfads,Mr,fasdf,asdfa
-asdaga,143245,fasdfads,Mr,fasdf,asdfa
-asdfasda,asdfasdfa,asdfasdf,Ms,asdfasdf,asdgasfg
+
