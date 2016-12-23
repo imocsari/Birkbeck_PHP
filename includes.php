@@ -64,3 +64,56 @@ class Login
     }
 
 }
+
+
+function validfirstname($firstname) { 
+			if ($firstname == '') {
+				return false;
+			}
+			if (strlen($firstname) > 30) {
+				return false;
+			}
+			if (strpos($firstname,' ') === false) {
+				return false;
+			}
+			return true;
+		}
+    
+function validsurname($surname) { 
+    			if ($surname == '') {
+    				return false;
+    			}
+    			if (strlen($surname) > 30) {
+    				return false;
+    			}
+    			if (strpos($surname,' ') === false) {
+    				return false;
+    			}
+    			return true;
+}
+		
+		function validEmail($email) {
+		/*	Field is required
+			Should be a valid email address	*/
+			if ($email == '') {
+				return false;
+			}			
+			if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+				return false;
+			}
+			return true;
+		}
+		
+    		
+		function validFormat($format) {
+		/*	Field is required
+			Submitted value must be one of the values specified in the html form	*/
+			if ($format == '') {
+				return false;
+			}
+			if ($format == 'plain' or $format =='html') {
+				return true;
+			} else {
+				return true;
+			}
+		}

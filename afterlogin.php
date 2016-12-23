@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 require_once 'includes.php';
 include("layouts/header.php");
-session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $login = (new Login())->logout();

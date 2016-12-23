@@ -43,7 +43,7 @@ list-style: none;
 }
 input[type=submit] {
 width:20%;
-background-color:#FFBC00;
+background-color:#f7cc54;
 color:#fff;
 border:2px solid #FFCB00;
 padding:10px;
@@ -96,7 +96,7 @@ color:#6495ed
 label {
   font-size: 22px;
   padding-top: 10px;
-  color: #FFBC00;
+  color: #f7cc54;
 }
 
 option {
