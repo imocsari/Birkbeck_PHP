@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        <?php
        if (!isset($_SESSION['is_auth'])) :
            echo '<div text-center><b>Login Required!</b></div>';
-           header("refresh:3; url=login.php");
+           header("Location: login.php");
            die;
        else:
            $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';

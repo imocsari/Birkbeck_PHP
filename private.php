@@ -2,7 +2,9 @@
 session_start();
 require_once 'includes.php';
 include("layouts/header.php");
-
+if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
+    header("Location: login.php");
+}
 if (isset($_POST['logout'])) {
 
     $login = (new Login())->logout();
