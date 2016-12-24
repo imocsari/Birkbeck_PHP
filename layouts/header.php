@@ -1,3 +1,11 @@
+<?php 
+if(isset($_SESSION['username'])){
+echo '<a class="link" href="login.php?action=logout" style="text-decoration:none">logout</a>';
+}else{
+echo '<a class="link" href="login.php" style="text-decoration:none">login</a>';
+}
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,9 +22,7 @@
   </a>
 
   <!-- Right Navigation -->
-  <div id="log" class="navbar-wagon-right hidden-xs hidden-sm text-center">
-    <a href="login.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
-    <a href="login.php" class="navbar-wagon-item navbar-wagon-button btn">Admin</a>
+    <a href="intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
   </div>
 </div>
 </body>

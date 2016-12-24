@@ -1,14 +1,13 @@
 <?php
+session_start();
 require_once 'includes.php';
 include("layouts/header.php");
 
-session_start();
+if (isset($_POST['logout'])) {
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-// 
-//     $login = (new Login())->logout();
-//     die;
-// }
+    $login = (new Login())->logout();
+    die;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +28,7 @@ session_start();
             $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
             $r .= '
             <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-            <div class="text-right"><input type="submit" value="Logout"></div>
+            <div class="text-right"><input type="submit" name="logout" value="logout"></div>
         </form>';
             echo $r;
         endif;
@@ -39,7 +38,6 @@ session_start();
 <div class="text-center">
   <form action="<?php echo $self; ?>" method="post"> <!-- This file will receive the data; post means data will be passed to server as a seperate file -->
     <fieldset>
-    <legend>Sign Up</legend>
       <!-- important to use meaningful names for the name tags, as they are the $_POST array keys -->
       <!-- NOTE THE ADDITION OF THE DATA ERROR VARIABLES -->
       <div>  
@@ -100,29 +98,6 @@ session_start();
       </div>
     </fieldset>
   </form>
-<!-- <form action="myform.php" method="POST">
-  <label for="title">Title</label><br>
-  <select name="title">
-      <option selected disabled>Choose one</option>
-      <option value="Mr">Mr.</option>
-      <option value="Mrs">Mrs.</option>
-      <option value="Ms">Ms.</option>
-      <option value="Dr">Dr.</option>
-      <option value="Prof">Prof.</option>
-  </select>
-<br/>
-  <label for="firstname">Enter first name!</label><br>
-  <input type="text" name="firstname" placeholder="Stephen"/><br/>
-  <label for="surname">Enter surname!</label><br>
-  <input type="text" name="surname" placeholder="Hawking"/><br/>
-  <label for="email">Enter an e-mail address!</label><br>
-  <input type="text" name="email" placeholder="stephenhawking@yahoo.co.uk" /><br/>
-  <label for="username">Enter a username!</label><br>
-  <input type="text" name="username" placeholder="username"/><br/>
-  <label for="password">Enter a password!</label><br>
-  <input type="text" name="password" placeholder="********"/><br/>
-<p><input type="submit" value="Submit"></p>
-</form> -->
 </div>
 </body>
 <?php include("layouts/footer.php"); ?>

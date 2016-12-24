@@ -24,7 +24,7 @@ class Login
               header("Location: private.php");
             }
             else {
-              header("Location: afterlogin.php");
+              header("Location: intranet.php");
             }
           die();
         } else {
