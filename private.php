@@ -9,7 +9,7 @@ session_start();
 //     $login = (new Login())->logout();
 //     die;
 // }
-// ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,18 +21,18 @@ session_start();
 <section class="loginform">
         <br>
         <?php
-        // if (!isset($_SESSION['is_auth'])) :
-        //     echo '<div text-center><b>Login Required!</b></div>';
-        //     header("refresh:3; url=login.php");
-        //     die;
-        // else:
-        //     $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
-        //     $r .= '
-        //     <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-        //     <div class="text-right"><input type="submit" value="Logout"></div>
-        // </form>';
-        //     echo $r;
-        // endif;
+        if (!isset($_SESSION['is_auth'])) :
+            echo '<div text-center><b>Login Required!</b></div>';
+            header("refresh:3; url=login.php");
+            die;
+        else:
+            $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
+            $r .= '
+            <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
+            <div class="text-right"><input type="submit" value="Logout"></div>
+        </form>';
+            echo $r;
+        endif;
         ?>
         <br>
 </section>
@@ -42,8 +42,8 @@ session_start();
     <legend>Sign Up</legend>
       <!-- important to use meaningful names for the name tags, as they are the $_POST array keys -->
       <!-- NOTE THE ADDITION OF THE DATA ERROR VARIABLES -->
-      <div>
-        <label for="title">Title</label>
+      <div>  
+        <label for="title">Title</label></br>
         <input value="<?php echo $title ?>" 
                 type="text" 
                 name="title" 
@@ -52,7 +52,7 @@ session_start();
                 <?php echo '<span style="color:red">' . $titleError . '</span>'?>
       </div>
       <div>
-        <label for="firstname">Firstname</label>
+        <label for="firstname">Firstname</label></br>
         <input value="<?php echo $firstname ?>" 
                 type="text" 
                 name="firstname" 
@@ -61,7 +61,7 @@ session_start();
                 <?php echo '<span style="color:red">' . $firstnameError . '</span>'?>
       </div>
       <div>
-        <label for="surname">Surname</label>
+        <label for="surname">Surname</label></br>
         <input value="<?php echo $surname ?>" 
                 type="text" 
                 name="surname" 
@@ -70,7 +70,7 @@ session_start();
                 <?php echo '<span style="color:red">' . $surnameError . '</span>'?>
       </div>
       <div>            
-        <label for="email">Email</label>
+        <label for="email">Email</label></br>
         <input value="<?php echo $email ?>" 
                 type="text" 
                 name="email" 
@@ -78,7 +78,7 @@ session_start();
                 <?php echo '<span style="color:red">' . $emailError . '</span>'?>
       </div>
       <div>
-        <label for="username">Username</label>
+        <label for="username">Username</label></br>
         <input value="<?php echo $username ?>" 
                 type="text" 
                 name="username" 
@@ -87,7 +87,7 @@ session_start();
                 <?php echo '<span style="color:red">' . $usernameError . '</span>'?>
       </div>
       <div>
-        <label for="password">Password</label>
+        <label for="password">Password</label></br>
         <input value="<?php echo $password ?>" 
                 type="text" 
                 name="password" 

@@ -254,6 +254,9 @@ function validTitle($title) {
 			
 			#this section of code is responsible for processing clean or invalid data				
 			if ($form_is_submitted === true && empty($errors)) {
+        $data = $_POST['username'] . ',' . $_POST['password'] . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
+        $ret = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
+        
 			# Valid submission THEN process the valid data
 				echo '<p>No errors detected.  Thank you for submitting :)</p>';
 			} else { #YOU HAVE TO BE REALLY CAREFUL TO INCLUDE THE FORM HTML IN THIS BLOCK BUT NEED TO CLOSE AND OPEN the PHP tags to do it
