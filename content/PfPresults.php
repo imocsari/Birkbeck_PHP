@@ -1,8 +1,7 @@
 <?php
 session_start();
+include("../layouts/header.php");
 require '../includes.php';
-include("layouts/header.php");
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

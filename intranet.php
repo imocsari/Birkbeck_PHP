@@ -30,11 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            die;
        else:
            $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
-           $r .= '
-       <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-           <div class="text-center"><input type="submit" value="Logout"></div>
-       </form>';
-          echo $r;
        endif;
        ?>
        <br>

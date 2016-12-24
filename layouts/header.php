@@ -1,5 +1,13 @@
 <?php
-?>
+// session_start();
+// require 'includes.php';
+// 
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// 
+//     $login = (new Login())->logout();
+//     die;
+// }
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,25 +17,22 @@
     <title></title>
   </head>
   <body>
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.jpg" "width="100" height="80"" />
-  </a>
-
-  <!-- Right Navigation -->
-  <?php  
-  if(isset($_SESSION['username'])){
-  echo '<a class="link" href="login.php?action=logout" class="navbar-wagon-item navbar-wagon-button btn"">logout</a>';
-  }else{
-  echo '<a class="link" href="login.php" style="text-decoration:none">login</a>';
-  }
-  if($_SESSION['username'] == "admin") {
-  echo '<a class="link" href="private.php" style="text-decoration:none">Create user</a>';
-}
-  ?>
-    <a href="intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
-  </div>
-</div>
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <a href="/" class="navbar-wagon-brand">
+        <img src="../images/logo.jpg" "width="100" height="80"" />
+      </a>
+      <?php
+      if(isset($_SESSION['username'])){
+      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
+      }else{
+      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../intranet.php" style="text-decoration:none">login</a>';
+      }
+      if($_SESSION['username'] == "admin") {
+      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a class="link" href="../private.php" style="text-decoration:none">Create user</a>';
+      }
+      ?>
+        <a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
+    </div>
 </body>
 </html>

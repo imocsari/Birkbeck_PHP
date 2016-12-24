@@ -30,7 +30,6 @@ if (isset($_POST['logout'])) {
             $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
             $r .= '
             <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8">
-            <div class="text-right"><input type="submit" name="logout" value="logout"></div>
         </form>';
             echo $r;
         endif;
