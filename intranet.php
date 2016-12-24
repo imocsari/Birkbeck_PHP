@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'includes.php';
+require 'includes.php';
 include("layouts/header.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                  <h2>DT results</h2>
                  <p>Introduction to Database Technology</p>
                </div>
-               <a class="card-link" href="content/DTresults.html" ></a>
+               <a class="card-link" href="content/DTresults.php" ></a>
              </div>
            </div>
            <div class="col-xs-12 col-sm-4">
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                  <h2>P1 results</h2>
                  <p>Web Programming using PHP</p>
                </div>
-               <a class="card-link" href="content/P1results.html" ></a>
+               <a class="card-link" href="content/P1results.php" ></a>
              </div>
            </div>
            <div class="col-xs-12 col-sm-4">
@@ -66,11 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                  <h2>PfP results</h2>
                  <p>Problem Solving for Programming</p>
                </div>
-               <a class="card-link" href="content/PfPresults.html" ></a>
+               <a class="card-link" href="content/PfPresults.php" ></a>
              </div>
            </div>
          </div>
        </div>
    </body>
-   <?php include("layouts/footer.php"); ?>
+      <?php include("layouts/footer.php"); ?>
  </html>
