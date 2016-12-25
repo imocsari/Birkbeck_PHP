@@ -74,12 +74,15 @@ function validTitle($title) {
 	if ($title == '') {
 		return false;
 	}
+  // if (!ctype_digit($title)) {
+  //     return false;
+  // }
+  if (strlen($title) < 2) {
+    return false;
+  }
 	if (strlen($title) > 10) {
 		return false;
 	}
-	// if (strpos($firstname,' ') === false) {
-	// 	return false;
-	// }
 	return true;
 }
 		
@@ -90,12 +93,16 @@ function validTitle($title) {
 			if ($firstname == '') {
 				return false;
 			}
-			if (strlen($firstname) > 150) {
+			if (strlen($firstname) > 20) {
 				return false;
 			}
-			// if (strpos($firstname,' ') === false) {
-			// 	return false;
-			// }
+      if (ctype_digit($firstname)) {
+          return false;
+      }
+      if (strlen($firstname) < 2) {
+				return false;
+			}
+
 			return true;
 		}
     function validSurName($surname) { 
@@ -105,17 +112,25 @@ function validTitle($title) {
 			if ($surname == '') {
 				return false;
 			}
-			if (strlen($surname) > 150) {
+      
+      if (ctype_digit($surname)) {
+          return false;
+      }
+      if (strlen($surname) < 2) {
 				return false;
 			}
-			// if (strpos($surname,' ') === false) {
-			// 	return false;
-			// }
+			if (strlen($surname) > 20) {
+				return false;
+			}
 			return true;
 		}
 		function validEmail($email) {
 		/*	Field is required
 			Should be a valid email address	*/
+      
+      if (($_SESSION['email']) == ($_POST['email'])) {
+        return false;
+      }
 			if ($email == '') {
 				return false;
 			}			
@@ -129,16 +144,17 @@ function validTitle($title) {
 		/* 	Field is required
 			Length should not exceed 150 chars
 			Should contain at least one space character */
-			if ($username == '') {
+      if (($_SESSION['username']) == ($_POST['username'])) {
+        return false;
+      }
+      
+      if ($username == '') {
 				return false;
 			}
-			if (strlen($username) > 150) {
+			if (strlen($username) > 50) {
 				return false;
 			}
       
-			// if (strpos($firstname,' ') === false) {
-			// 	return false;
-			// }
 			return true;
 		}
 		
@@ -149,12 +165,9 @@ function validTitle($title) {
 			if ($password == '') {
 				return false;
 			}
-			if (strlen($password) > 150) {
+			if (strlen($password) > 30) {
 				return false;
 			}
-			// if (strpos($firstname,' ') === false) {
-			// 	return false;
-			// }
 			return true;
 		}
 ?>
@@ -178,9 +191,9 @@ function validTitle($title) {
 					if (validFirstName($html)) {
 						$CleanData['firstname'] = $html;
 					} else {
-						$errors['firstname'] = $html . ' is not valid.';
+						$errors['firstname'] = $html .' is incorrect value.';
 					}
-				} else {
+			} else {
 						$errors['firstname'] = 'not submitted.';
 				}
 				if (isset($_POST['title'])) { #validate the Full Name field
@@ -189,10 +202,10 @@ function validTitle($title) {
 					if (validTitle($html)) {
 						$CleanData['title'] = $html;
 					} else {
-						$errors['title'] = $html . ' is not valid.';
+						$errors['title'] = $html . ' is incorrect value.';
 					}
 				} else {
-						$errors['firstname'] = 'not submitted.';
+						$errors['title'] = 'not submitted.';
 				}
 				if (isset($_POST['surname'])) { #validate the Full Name field
 					$trimmed = trim($_POST['surname']);
@@ -200,7 +213,7 @@ function validTitle($title) {
 					if (validSurName($html)) {
 						$CleanData['surname'] = $html;
 					} else {
-						$errors['surname'] = $html . ' is not valid.';
+						$errors['surname'] = $html . ' is incorrect value.';
 					}
 				} else {
 						$errors['surname'] = 'not submitted.';
@@ -211,22 +224,10 @@ function validTitle($title) {
 					if (validEmail($html)) {
 						$CleanData['email'] = $html;
 					} else {
-						$errors['email'] = $html . ' is not valid.';
+						$errors['email'] = $html . ' is incorrect value.';
 					}
 				} else {
 						$errors['email'] = 'not submitted.';
-				}
-				
-				if (isset($_POST['title'])) { #validate the Full Name field
-					$trimmed = trim($_POST['title']);
-					$html = htmlentities($trimmed);
-					if (validSurName($html)) {
-						$CleanData['title'] = $html;
-					} else {
-						$errors['title'] = $html . ' is not valid.';
-					}
-				} else {
-						$errors['title'] = 'not submitted.';
 				}
 				
 				if (isset($_POST['username'])) { #validate the Full Name field
@@ -235,7 +236,7 @@ function validTitle($title) {
 					if (validUserName($html)) {
 						$CleanData['username'] = $html;
 					} else {
-						$errors['username'] = $html . ' is not valid.';
+						$errors['username'] = $html . ' is incorrect value.';
 					}
 				} else {
 						$errors['username'] = 'not submitted.';
@@ -246,7 +247,7 @@ function validTitle($title) {
 					if (validPassword($html)) {
 						$CleanData['password'] = $html;
 					} else {
-						$errors['password'] = $html . ' is not valid.';
+						$errors['password'] = $html . ' is incorrect value.';
 					}
 				} else {
 						$errors['password'] = 'not submitted.';
@@ -264,8 +265,7 @@ function validTitle($title) {
 			} else { #YOU HAVE TO BE REALLY CAREFUL TO INCLUDE THE FORM HTML IN THIS BLOCK BUT NEED TO CLOSE AND OPEN the PHP tags to do it
 				# (re)or display form
 				if (!empty($errors)) { #errors exist in the errors() array
-          sleep(2);
-					echo '<p style="color:red"> Please correct the highlighted errors below:</p>';					
+          sleep(2);				
 				} 
 				
 				#this section of code sets the form field data to either clean or NULL if there was an error
@@ -339,4 +339,4 @@ function validTitle($title) {
 					$passwordError = '';
 				}
       }
-?>	
+?>

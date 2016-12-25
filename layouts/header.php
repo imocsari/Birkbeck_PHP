@@ -1,7 +1,6 @@
 <?php
-// session_start();
-// require 'includes.php';
-// 
+session_start();
+
 // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // 
 //     $login = (new Login())->logout();
@@ -17,23 +16,28 @@
     <title></title>
   </head>
   <body>
-    <div class="navbar-wagon">
-      <!-- Logo -->
-      <a href="/" class="navbar-wagon-brand">
-        <img src="../images/logo.jpg" "width="100" height="80"" />
-      </a>
-      <?php
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="../images/logo.jpg" "width="100" height="80"" />
+  </a>
+  <?php
+      
       if(isset($_SESSION['username'])){
-      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="logout" name="logoutbtn" class="link" href="../logout.php">logout</a>';
-      }else{
-      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="login" name="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
-      $value ='loginbtn';
+      echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
       }
+      else {
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" name="loginbtn" "value="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
+        }
+        
       if($_SESSION['username'] == "admin") {
-      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a class="link" href="../private.php" style="text-decoration:none">Create user</a>';
+        echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a class="link" href="../private.php" style="text-decoration:none">Create user</a>';
       }
-      ?>
-        <a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>
-    </div>
+  ?>
+        
+        <!-- <a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="login" name="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
+    </div> -->
+</div>
 </body>
 </html>

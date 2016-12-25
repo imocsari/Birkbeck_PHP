@@ -44,7 +44,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 name="title" 
                 id="title" 
                 size="10"/>
-                <?php echo '<span style="color:red">' . $titleError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $titleError . '</span>'?>
       </div>
       <div>
         <label for="firstname">Firstname</label></br>
@@ -53,7 +53,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 name="firstname" 
                 id="firstname" 
                 size="35"/>
-                <?php echo '<span style="color:red">' . $firstnameError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $firstnameError . '</span>'?>
       </div>
       <div>
         <label for="surname">Surname</label></br>
@@ -62,7 +62,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 name="surname" 
                 id="surname" 
                 size="35"/>
-                <?php echo '<span style="color:red">' . $surnameError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $surnameError . '</span>'?>
       </div>
       <div>            
         <label for="email">Email</label></br>
@@ -70,7 +70,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 type="text" 
                 name="email" 
                 id="email" size="40"/>
-                <?php echo '<span style="color:red">' . $emailError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $emailError . '</span>'?>
       </div>
       <div>
         <label for="username">Username</label></br>
@@ -79,7 +79,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 name="username" 
                 id="username" 
                 size="35"/>
-                <?php echo '<span style="color:red">' . $usernameError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $usernameError . '</span>'?>
       </div>
       <div>
         <label for="password">Password</label></br>
@@ -88,7 +88,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 name="password" 
                 id="password" 
                 size="35"/>
-                <?php echo '<span style="color:red">' . $passwordError . '</span>'?>
+                <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $passwordError . '</span>'?>
       </div>
       <div>            
         <input type="submit" name="SubmitStatus" value="Submit" />
