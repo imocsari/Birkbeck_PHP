@@ -37,6 +37,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</style>
 	</head>
 	<body>
+		<section class="loginform">
+			<br>
+			<?php
+			if (!isset($_SESSION['is_auth'])) :
+					echo '<div text-center><b>Login Required!</b></div>';
+					header("Location: login.php");
+					die;
+			else:
+					$r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+					echo $r;
+			endif;
+			?>
+			<br>
+		</section>
 		<h1 class="text-center">Introduction to Database Technology - DT Results</h1>
 		<table class="container-fluid">
 		  <tr>

@@ -122,3 +122,23 @@ select {
 .loginform {
   text-align: center;
 }
+
+.text {
+  font-weight:300;
+  text-align: center;
+  font-size: 25px;
+  /*font-weight: bold;*/
+  color:white;
+  padding-top: 200px;
+  opacity: 0.9;
+}
+
+.text h3 {
+  font-size: 50px;
+  padding-bottom: 100px;
+}
+#secondline {
+  max-width: 1000px;
+  display: inline-block;
+}
+

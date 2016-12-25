@@ -135,6 +135,7 @@ function validTitle($title) {
 			if (strlen($username) > 150) {
 				return false;
 			}
+      
 			// if (strpos($firstname,' ') === false) {
 			// 	return false;
 			// }

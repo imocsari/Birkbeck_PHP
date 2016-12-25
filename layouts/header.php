@@ -25,8 +25,10 @@
       <?php
       if(isset($_SESSION['username'])){
       echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
+      
       }else{
-      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../intranet.php" style="text-decoration:none">login</a>';
+      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="login" name="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
+      $value ='loginbtn';
       }
       if($_SESSION['username'] == "admin") {
       echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a class="link" href="../private.php" style="text-decoration:none">Create user</a>';

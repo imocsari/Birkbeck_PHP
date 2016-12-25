@@ -29,19 +29,18 @@ exit();
     <form class="formbox"name="login" method="post" accept-charset="utf-8">
         <ul>
 
-            <li>
-                <label for="username">Please enter your username!</label>
-            </li>
-            <li>
-                <input type="text" name="username" placeholder="username">
-            </li>
-            <li>
-                <label for="password">Please enter your password!</label>
-            </li>
-            <li>
-                <input type="password" name="password" placeholder="password">
-            </li>
-            <li id="loginbutton">
+                <label for="username">Please enter your username!</label><br>
+              <?php
+                if ($value == "loginbtn") {
+                  echo '<input type="text" name="username" value="admin" readonly><br>';
+                } else {
+                  echo '<input type="text" name="username" placeholder="anyad"><br>';
+                }
+              
+                ?>
+                <label for="password">Please enter your password!</label><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <li id="loginbutton">
                 <input type="submit" value="Login">
             </li>
         </ul>

@@ -18,8 +18,10 @@ exit();
      <title>DSC</title>
    </head>
    <body>
-     <div class="float">
-     <p>The Department of Computer Science and Information Systems at Birkbeck is one of the first computing departments established in the UK and we will be celebrating our 60th anniversary in 2017. We provide a stimulating teaching and research environment for both part-time and full-time students, and a friendly, inclusive space for learning, working and collaborating.</p></div>
+     <div class="text">
+     <h3>The Department of <b style="color:#fcab0e;">Computer Science</b> and Information Systems at Birkbeck</h3>
+   <div id="secondline"><p>One of the first computing departments established in the UK and we will be celebrating our 60th anniversary in 2017. We provide a stimulating teaching and research environment for both part-time and full-time students, and a friendly, inclusive space for learning, working and collaborating.</p></div>
+    </div>
    </body>
    <?php include("layouts/footer.php"); ?>
  </html>
