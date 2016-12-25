@@ -24,8 +24,7 @@
       </a>
       <?php
       if(isset($_SESSION['username'])){
-      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
-      
+      echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="logout" name="logoutbtn" class="link" href="../logout.php">logout</a>';
       }else{
       echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" value="login" name="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
       $value ='loginbtn';

@@ -1,14 +1,16 @@
 <?php
 session_start();
+require_once '../includes.php';
 include("../layouts/header.php");
-require '../includes.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ((($_SESSION['username']) != 'username') || ($_SESSION['is_logged_in'] = false)) {
+    header("Location: login.php");
+}
+if (isset($_POST['logout'])) {
 
     $login = (new Login())->logout();
     die;
 }
- ?>
+?>
 <!doctype html>
 <html>
 	<head>
@@ -40,14 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<section class="loginform">
 			<br>
 			<?php
-			if (!isset($_SESSION['is_auth'])) :
-					echo '<div text-center><b>Login Required!</b></div>';
-					header("Location: login.php");
-					die;
-			else:
-					$r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
-					echo $r;
-			endif;
+			// if (!isset($_SESSION['is_auth'])) :
+			// 		echo '<div text-center><b>Login Required!</b></div>';
+			// 		header("Location: login.php");
+			// 		die;
+			// else:
+			// 		$r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+			// 		echo $r;
+			// endif;
 			?>
 			<br>
 		</section>

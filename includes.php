@@ -259,10 +259,12 @@ function validTitle($title) {
         $ret = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
         
 			# Valid submission THEN process the valid data
-				echo '<p>No errors detected.  Thank you for submitting :)</p>';
+				echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>No errors detected.  Thank you for submitting :)</p></div>';
+        header("Refresh: 2; url=private.php");
 			} else { #YOU HAVE TO BE REALLY CAREFUL TO INCLUDE THE FORM HTML IN THIS BLOCK BUT NEED TO CLOSE AND OPEN the PHP tags to do it
 				# (re)or display form
 				if (!empty($errors)) { #errors exist in the errors() array
+          sleep(2);
 					echo '<p style="color:red"> Please correct the highlighted errors below:</p>';					
 				} 
 				
