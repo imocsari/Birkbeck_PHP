@@ -1,17 +1,23 @@
 <?php
 session_start();
+require_once '../includes.php';
 include("../layouts/header.php");
-require '../includes.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $login = (new Login())->logout();
+    die;
+}
+?>
+<?php
 if (!isset($_SESSION['is_auth'])) :
     echo '<div text-center><b>Login Required!</b></div>';
-    header("Location: login.php");
+    header("Location: ../login.php");
     die;
 else:
     $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
     echo $r;
 endif;
- ?>
+?>
 <!doctype html>
 <html>
 	<head>

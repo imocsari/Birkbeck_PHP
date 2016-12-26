@@ -1,11 +1,5 @@
 <?php
 session_start();
-
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-// 
-//     $login = (new Login())->logout();
-//     die;
-// }
  ?>
 <!DOCTYPE html>
 <html>
@@ -27,18 +21,18 @@ session_start();
     
       if(isset($_SESSION['username'])){
         if($_SESSION['username'] == "admin") {
-                    echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../logout.php? action=logout">logout</a>';
+                    echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../logout.php">logout</a>';
                     echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"style="float:right; "class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
                     echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a href="../private.php" style="text-decoration:none">Create user</a>';
         }
         else {
-          echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../logout.php action=logout">logout</a>';
+          echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../logout.php">logout</a>';
           echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right; class="link1 "class="navbar-wagon-item navbar-wagon-button btn" type="submit" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
         }
       }
       else {
-          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"  name="subject" value="work" href="../private.php" style="text-decoration:none">Admin</a>';
-          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right; class="link" value="2" "class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../private.php" style="text-decoration:none">Admin</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right; "class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
         }
       
     
