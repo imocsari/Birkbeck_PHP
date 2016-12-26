@@ -25,25 +25,9 @@ endif;
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../components/card.css">
+    <link rel="stylesheet" href="content.css">
 		<meta charset="utf-8">
 		<title>Problem Solving for Programming – PfP Results</title>
-		<style>
-			table {
-				font-family: arial, sans-serif;
-				border-collapse: collapse;
-				width: 50%;
-			}
-
-			td, th {
-				border: 1px solid #dddddd;
-				text-align: left;
-				padding: 5px;
-			}
-
-			tr:nth-child(even) {
-				background-color: #dddddd;
-			}
-		</style>
 	</head>
 	<body >
 		<h1 class="tabletop text-center">Problem Solving for Programming – PfP Results</h1>

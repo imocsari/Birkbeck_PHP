@@ -1,7 +1,11 @@
 <?php
+session_start();
 require 'includes.php';
 include("layouts/header.php");
-
+if (isset($_SESSION['is_auth'])) {
+    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+    echo $r;
+}
  ?>
  <!DOCTYPE html>
  <html>
