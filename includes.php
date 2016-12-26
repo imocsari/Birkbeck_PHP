@@ -28,9 +28,8 @@ class Login
             }
           die();
         } else {
-            echo '<div style="padding-top:200px; padding-bottom:800px; background-color:#8B7488; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Wrong password!</p><br><p style="padding-top:50px;">Please enter agian!</p></div>';
-            echo '<b>Please enter again!</b>';
-            header("refresh:2; url=login.php");
+            echo '<div style="padding-top:200px; padding-bottom:800px; background-color:#8B7488; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Wrong password!</p><br><p style="padding-top:50px;">Please enter again!</p></div>';
+            header("refresh:1; url=login.php");
             die;
         }
     }
