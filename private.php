@@ -43,6 +43,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 type="text" 
                 name="title" 
                 id="title" 
+                placeholder="Mr,Mrs,Miss,Prof, Dr,Sir, etc."
                 size="10"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $titleError . '</span>'?>
       </div>
@@ -52,6 +53,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 type="text" 
                 name="firstname" 
                 id="firstname" 
+                placeholder="Charles"
                 size="35"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $firstnameError . '</span>'?>
       </div>
@@ -60,6 +62,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
         <input value="<?php echo $surname ?>" 
                 type="text" 
                 name="surname" 
+                placeholder="Darwin"
                 id="surname" 
                 size="35"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $surnameError . '</span>'?>
@@ -69,6 +72,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
         <input value="<?php echo $email ?>" 
                 type="text" 
                 name="email" 
+                placeholder="myemail@myemail.com"
                 id="email" size="40"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $emailError . '</span>'?>
       </div>
@@ -78,6 +82,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
                 type="text" 
                 name="username" 
                 id="username" 
+                placeholder="Username"
                 size="35"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $usernameError . '</span>'?>
       </div>
@@ -86,7 +91,8 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
         <input value="<?php echo $password ?>" 
                 type="text" 
                 name="password" 
-                id="password" 
+                id="password"
+                placeholder="**********" 
                 size="35"/>
                 <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $passwordError . '</span>'?>
       </div>

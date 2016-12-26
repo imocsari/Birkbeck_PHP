@@ -2,7 +2,7 @@
 session_start();
 include("layouts/header.php"); 
 if(!empty($_GET['status'])){
-  echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Successfully logged out! You will be redirected to homepage!</p></div>';
+  echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Successfully logged out!</p><br><p style="padding-top:50px;">Redirected to homepage!</p></div>';
   header("Refresh: 3; url=index.php");
 }
 if (isset($_POST['submit']) and $_POST['submit']=='logout'){

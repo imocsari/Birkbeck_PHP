@@ -3,11 +3,14 @@ session_start();
 include("../layouts/header.php");
 require '../includes.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $login = (new Login())->logout();
+if (!isset($_SESSION['is_auth'])) :
+    echo '<div text-center><b>Login Required!</b></div>';
+    header("Location: login.php");
     die;
-}
+else:
+    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+    echo $r;
+endif;
  ?>
 <!doctype html>
 <html>
@@ -37,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</style>
 	</head>
 	<body >
-		<h1 class="text-center">Problem Solving for Programming – PfP Results</h1>
+		<h1 class="tabletop text-center">Problem Solving for Programming – PfP Results</h1>
 		<table class="container-fluid">
 		  <tr>
 			<th>Year</th>

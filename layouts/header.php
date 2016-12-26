@@ -24,15 +24,18 @@ session_start();
   <?php
       
       if(isset($_SESSION['username'])){
-      echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" name="link" style="float:right; class="link1 "class="navbar-wagon-item navbar-wagon-button btn" type="submit" href="../intranet.php?link=2" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
+          echo'<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" class="link" href="../logout.php? action=logout">logout</a>';
       }
       else {
-          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" name="loginbtn" "value="loginbtn" class="link" href="../private.php" style="text-decoration:none">Admin</a>';
-          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" name="link" class="link" href="../private.php?link=1" style="text-decoration:none">Admin</a>';
+          echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" name="link" style="float:right; class="link1 "class="navbar-wagon-item navbar-wagon-button btn" type="submit" href="../intranet.php?link=2" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
         }
         
       if($_SESSION['username'] == "admin") {
+                  echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn" style="float:right;"class="navbar-wagon-item navbar-wagon-button btn" href="../intranet.php" class="navbar-wagon-item navbar-wagon-button btn">Intranet</a>';
         echo '<a style="float:right;" class="navbar-wagon-item navbar-wagon-button btn"<a class="link" href="../private.php" style="text-decoration:none">Create user</a>';
+
       }
   ?>
         

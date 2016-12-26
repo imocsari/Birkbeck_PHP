@@ -31,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <label for="username">Please enter your username!</label><br>
               <?php
-                if ('loginbtn') {
+              $link=$_GET['link'];
+              if ($link == '1') {
                   echo '<input type="text" name="username" value="admin" readonly><br>';
               } else {
                   echo '<input type="text" name="username" placeholder="anyad"><br>';

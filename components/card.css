@@ -71,3 +71,7 @@ text-align: center;
   display: block;
   text-align: center;
 }
+
+.tabletop {
+  padding-top: 50px;
+}
