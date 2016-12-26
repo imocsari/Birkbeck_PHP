@@ -7,12 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = (new Login())->login();
     die;
 }
-// if (isset($_POST['submit']) and $_POST['submit']=='logout'){
-// if(!isset($_SESSION)){session_start();};
-// unset($_SESSION['username']);
-// header('Location:index.php');
-// exit();
-// }
 ?>
 <!DOCTYPE html>
 <html>

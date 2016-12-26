@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'includes.php';
 include("layouts/header.php");
 
