@@ -10,38 +10,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Login</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body >
-<div class="container">
-<div class="row">
-  <div id="box">
-
-    <form class="formbox"name="login" method="post" accept-charset="utf-8">
-        <ul>
-
-                <label for="username">Please enter your username!</label><br>
-              <?php
-               if(isset($_POST['subject'])) {
+  <head>
+      <title>Login</title>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body >
+    <div class="container">
+      <div class="row">
+        <div id="box">
+          <form class="formbox"name="login" method="post" accept-charset="utf-8">
+            <ul>
+              <label for="username">Please enter your username!</label><br>
+                <?php
+                if(isset($_POST['subject'])) {
                   echo '<input type="text" name="username" value="admin" readonly><br>';
-              } else {
+                } else {
                   echo '<input type="text" name="username" placeholder="anyad"><br>';
                 }
-              
+                
                 ?>
-                <label for="password">Please enter your password!</label><br>
-                <input type="password" name="password" placeholder="password"><br>
-                <li id="loginbutton">
+              <label for="password">Please enter your password!</label><br>
+              <input type="password" name="password" placeholder="password"><br>
+              <li id="loginbutton">
                 <input type="submit" value="Login">
-            </li>
-        </ul>
-    </form>
-</div>
-</div>
-</div>
-</body>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 <?php include 'layouts/footer.php'; ?>
 </html>

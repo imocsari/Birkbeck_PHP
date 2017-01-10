@@ -1,174 +1,159 @@
 <?php
 class Login
 {
-    public $username;
-    public $password;
-    public $u;
-    public $p;
-    public $data;
-
-
-    public function __construct()
-    {
-        $this->username = @htmlentities(strtolower($_POST['username']));
-        $this->password = @htmlentities(strtolower($_POST['password']));
-    }
-
-    public function login()
-    {
-        if ($this->verify()) {
-          $_SESSION['username'] = $this->username;
-          $_SESSION['password'] = $this->password;
-          $_SESSION['is_auth'] = true;
-            if ($_SESSION['username'] == 'admin'){
-              header("Location: private.php");
-            }
-            else {
-              header("Location: intranet.php");
-            }
+  
+  public function __construct() {
+    $this->loginname = @htmlentities(strtolower($_POST['username']));
+    $this->loginpass = @htmlentities(strtolower($_POST['password']));
+  }
+  
+  public function login() {
+    if ($this->approve()) {
+      $_SESSION['username'] = $this->loginname;
+      $_SESSION['password'] = $this->loginpass;
+      $_SESSION['is_auth'] = true;
+        if ($_SESSION['username'] == 'admin') {
+          header("Location: adminform.php");
+        }
+        else {
+          header("Location: intranet.php");
+        }
           die();
-        } else {
-            echo '<div style="padding-top:200px; padding-bottom:800px; background-color:#8B7488; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Wrong password!</p><br><p style="padding-top:50px;">Please enter again!</p></div>';
-            header("refresh:1; url=login.php");
-            die;
-        }
+  } else {
+      echo '<div style="padding-top:200px; padding-bottom:800px; background-color:#8B7488; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Wrong password!</p><br><p style="padding-top:50px;">Please enter again!</p></div>';
+      header("refresh:1; url=login.php");
+      die;
     }
+  }
+  private function approve() {
+    $content = file_get_contents("users.txt");
+    $data = explode("\n", $content);
 
-    // public function logout()
-    // {
-    //     session_start();
-    //     session_unset();
-    //     header("Location: login.php");
-    //     die();
-    // }
+    foreach ($data as $row => $data) {
+      $user_data = explode(',', $data);
+      $this->user = @(strtolower($user_data[0]));
+      $this->pass = @trim(strtolower($user_data[1]), "\r");
 
-    public function verify()
-    {
-        $d = file_get_contents("users.txt");
-        $data = explode("\n", $d);
-
-        foreach ($data as $row => $data) {
-
-            $row_user = explode(',', $data);
-            $this->u = @(strtolower($row_user[0]));
-            $this->p = @trim(strtolower($row_user[1]), "\r");
-
-            if (empty(($_POST['username']) || ($_POST['password']))) {
-                return false;
-          } elseif (strcmp($this->u, $this->username) === 0 && strcmp($this->p, $this->password) === 0) {
-                return true;
-            }
-        }
-        return false;
+        if (empty(($_POST['username']) || ($_POST['password']))) {
+          return false;
+      } elseif (strcmp($this->user, $this->loginname) === 0 && strcmp($this->pass, $this->loginpass) === 0) {
+          return true;
+      }
     }
+      return false;
+   }
 
-}
+  }
 
 
 /* function definitions for validating form data; these could go in an include file to make this more readable*/
-function validTitle($title) { 
+  function validTitle($title) { 
 /* 	Field is required
 	Length should not exceed 150 chars
 	Should contain at least one space character */
-	if ($title == '') {
+	 if ($title == '') {
 		return false;
-	}
-  // if (!ctype_digit($title)) {
-  //     return false;
-  // }
-  if (strlen($title) < 2) {
+   }
+   if (!ctype_alnum($title)) {
+		return false;
+	 }
+   if (ctype_digit($title)) {
     return false;
-  }
-	if (strlen($title) > 10) {
+	 }
+   if (strlen($title) < 2) {
+    return false;
+   }
+	 if (strlen($title) > 10) {
 		return false;
-	}
-	return true;
-}
+	 }
+	  return true;
+  }
 		
-		function validFirstName($firstname) { 
+  function validFirstName($firstname) { 
 		/* 	Field is required
 			Length should not exceed 150 chars
 			Should contain at least one space character */
-			if ($firstname == '') {
-				return false;
-			}
-			if (strlen($firstname) > 20) {
-				return false;
-			}
-      if (ctype_digit($firstname)) {
-          return false;
-      }
-      if (strlen($firstname) < 2) {
-				return false;
-			}
-
-			return true;
+	  if ($firstname == '') {
+		  return false;
 		}
-    function validSurName($surname) { 
+		if (strlen($firstname) > 30) {
+		  return false;
+		}
+    if (ctype_digit($firstname)) {
+      return false;
+    }
+    if (strlen($firstname) < 2) {
+		  return false;
+		}
+	 return true;
+	}
+  function validSurName($surname) { 
 		/* 	Field is required
 			Length should not exceed 150 chars
 			Should contain at least one space character */
-			if ($surname == '') {
-				return false;
-			}
-      
-      if (ctype_digit($surname)) {
-          return false;
-      }
-      if (strlen($surname) < 2) {
-				return false;
-			}
-			if (strlen($surname) > 20) {
-				return false;
-			}
-			return true;
+	  if ($surname == '') {
+			return false;
+		}  
+    if (ctype_digit($surname)) {
+      return false;
+    }
+    if (strlen($surname) < 2) {
+		  return false;
 		}
-		function validEmail($email) {
+		if (strlen($surname) > 30) {
+			return false;
+		}
+	 return true;
+	}
+	function validEmail($email) {
 		/*	Field is required
 			Should be a valid email address	*/
-      
-      if (($_SESSION['email']) == ($_POST['email'])) {
-        return false;
-      }
-			if ($email == '') {
-				return false;
-			}			
-			if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-				return false;
-			}
-			return true;
+    if (($_SESSION['email']) == ($_POST['email'])) {
+      return false;
+    }
+		if ($email == '') {
+			return false;
+		}			
+		if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+			return false;
 		}
+	 return true;
+  }
 		
-		function validUserName($username) { 
+	function validUserName($username) { 
 		/* 	Field is required
 			Length should not exceed 150 chars
 			Should contain at least one space character */
-      if (($_SESSION['username']) == ($_POST['username'])) {
-        return false;
-      }
-      
-      if ($username == '') {
-				return false;
-			}
-			if (strlen($username) > 50) {
-				return false;
-			}
-      
-			return true;
+    if (($_SESSION['username']) == ($_POST['username'])) {
+      return false;
+    }
+    if (!ctype_alnum($username)) {
+    	return false;
+    }
+    if ($username == '') {
+		  return false;
 		}
+    if (strlen($username) < 3) {
+		  return false;
+		}
+		if (strlen($username) > 30) {
+			return false;
+		}
+	 return true;
+	}
 		
-		function validPassword($password) { 
+  function validPassword($password) { 
 		/* 	Field is required
 			Length should not exceed 150 chars
 			Should contain at least one space character */
-			if ($password == '') {
-				return false;
-			}
-			if (strlen($password) > 30) {
-				return false;
-			}
-			return true;
+    if ($password == '') {
+		  return false;
 		}
+		if (strlen($password) > 30) {
+			return false;
+		}
+	 return true;
+	}
 ?>
 <?php
 			$self = htmlentities($_SERVER['PHP_SELF']); #get the path and file name of this file; always Escape first using htmlentities()
@@ -256,11 +241,11 @@ function validTitle($title) {
 			#this section of code is responsible for processing clean or invalid data				
 			if ($form_is_submitted === true && empty($errors)) {
         $data = $_POST['username'] . ',' . $_POST['password'] . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
-        $ret = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
+        $save = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
         
 			# Valid submission THEN process the valid data
 				echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>No errors detected.  Thank you for submitting :)</p></div>';
-        header("Refresh: 2; url=private.php");
+        header("Refresh: 2; url=adminform.php");
 			} else { #YOU HAVE TO BE REALLY CAREFUL TO INCLUDE THE FORM HTML IN THIS BLOCK BUT NEED TO CLOSE AND OPEN the PHP tags to do it
 				# (re)or display form
 				if (!empty($errors)) { #errors exist in the errors() array

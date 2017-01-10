@@ -10,19 +10,21 @@ if (isset($_SESSION['is_auth'])) {
     echo $r;
 }
 ?>
- <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-     <link rel="stylesheet" href="style.css">
-     <title>DSC</title>
-   </head>
-   <body>
-     <div class="text">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>DSC</title>
+  </head>
+  <body>
+    <div class="text">
      <h3>The Department of <b style="color:#fcab0e;">Computer Science</b> and Information Systems at Birkbeck</h3>
-   <div id="secondline"><p>One of the first computing departments established in the UK and we will be celebrating our 60th anniversary in 2017. We provide a stimulating teaching and research environment for both part-time and full-time students, and a friendly, inclusive space for learning, working and collaborating.</p></div>
+      <div id="secondline">
+        <p>One of the first computing departments established in the UK and we will be celebrating our 60th anniversary in 2017. We provide a stimulating teaching and research environment for both part-time and full-time students, and a friendly, inclusive space for learning, working and collaborating.</p>
+      </div>
     </div>
    </body>
-   <?php include("layouts/footer.php"); ?>
+<?php include("layouts/footer.php"); ?>
  </html>
