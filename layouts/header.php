@@ -25,9 +25,7 @@ session_start();
           } else {
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../adminform.php">Admin</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../intranet.php">Intranet</a>';
-          }
-            
-          
+          }  
       ?>
     </div>
   </body>
