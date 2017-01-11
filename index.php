@@ -1,4 +1,4 @@
-<?php
+<?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module
 session_start();
 include("layouts/header.php"); 
 if(!empty($_GET['status'])){
@@ -6,17 +6,17 @@ if(!empty($_GET['status'])){
   header("Refresh: 3; url=index.php");
 }
 if (isset($_SESSION['is_auth'])) {
-    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Homepage! </b></div>';
-    echo $r;
+    $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Homepage! </b></div>';
+    echo $name;
 }
 ?>
+<!-- This is the front page of the application, including the login function, header and footer -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <title>DSC</title>
   </head>
   <body>
     <div class="text">

@@ -1,20 +1,21 @@
-<?php
+<?php #This is the intranet front page, where user able to come without logging in, or if the user already logged in, will able to see the results of the different modules without logging in.
 session_start();
 require 'includes.php';
 include("layouts/header.php");
 if (isset($_SESSION['is_auth'])) {
-    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
-    echo $r;
+    $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+    echo $name;
 }
+
  ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html>
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="components/card.css">
+     <link rel="stylesheet" href="../stylesheets/card.css">
    </head>
    <br>
    <body>

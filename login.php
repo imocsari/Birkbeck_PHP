@@ -1,6 +1,6 @@
-<?php
+<?php #this is a login page where login form displayed to the user 
 session_start();
-require_once 'includes.php';
+require_once 'includes.php'; 
 include 'layouts/header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -9,10 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
+
 <html>
   <head>
       <title>Login</title>
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body >
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if(isset($_POST['subject'])) {
                   echo '<input type="text" name="username" value="admin" readonly><br>';
                 } else {
-                  echo '<input type="text" name="username" placeholder="anyad"><br>';
+                  echo '<input type="text" name="username" placeholder="username"><br>';
                 }
                 
                 ?>

@@ -5,7 +5,6 @@ include("layouts/header.php");
 if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
     header("Location: login.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,18 +21,16 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
         header("refresh:3; url=login.php");
         die;
     } else {
-        $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
-        $r .= '
+        $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ', please add the new user details! </b></div>';
+        $name .= '
         <form action='. $_SERVER['PHP_SELF'] .' method="post" accept-charset="utf-8"></form>';
-        echo $r;
+        echo $name;
         }
     ?>
   </section>
   <div class="text-center">
     <form action="<?php echo $self; ?>" method="post"> <!-- This file will receive the data; post means data will be passed to server as a seperate file -->
       <fieldset>
-        <!-- important to use meaningful names for the name tags, as they are the $_POST array keys -->
-        <!-- NOTE THE ADDITION OF THE DATA ERROR VARIABLES -->
         <div>  
           <label for="title">Title</label></br>
           <input value="<?php echo $title ?>" 

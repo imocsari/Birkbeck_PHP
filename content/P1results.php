@@ -13,8 +13,8 @@ if (!isset($_SESSION['is_auth'])) {
     header("Location: ../login.php");
     die;
 } else{
-    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
-    echo $r;
+    $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+    echo $name;
 }
 ?>
 <!doctype html>
@@ -24,8 +24,8 @@ if (!isset($_SESSION['is_auth'])) {
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../components/card.css">
-    <link rel="stylesheet" href="content.css">
+		<link rel="stylesheet" href="../stylesheets/card.css">
+    <link rel="stylesheet" href="../stylesheets/content.css">
 		<title>Web Programming using PHP - P1 Results</title>
 	</head>
 	<body>
