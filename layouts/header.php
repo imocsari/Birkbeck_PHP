@@ -11,7 +11,7 @@ session_start();
   </head>
   <body>
     <div class="navbar">
-      <img src="../images/logo.jpg" alt="logo" height="80" />
+      <img src="../images/logo.jpg" alt="logo" height="80">
       <?php
             if(isset($_SESSION['username'])){
               if($_SESSION['username'] == "admin") {
