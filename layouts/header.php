@@ -6,6 +6,8 @@ session_start();
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../stylesheets/header.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/card.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <title>header</title>
   </head>
@@ -29,4 +31,4 @@ session_start();
       ?>
     </div>
   </body>
-</html>
+<!-- </html> -->
