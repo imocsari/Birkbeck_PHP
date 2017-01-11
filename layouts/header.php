@@ -11,19 +11,19 @@ session_start();
   </head>
   <body>
     <div class="navbar">
-      <img src="../images/logo.jpg" height="80" />
+      <img src="../images/logo.jpg" alt="logo" height="80" />
       <?php
             if(isset($_SESSION['username'])){
               if($_SESSION['username'] == "admin") {
                 echo'<a style="float:right;" class="navbar-item navbar-button btn" href="../logout.php">logout</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" class="navbar-item navbar-button btn" href="../intranet.php" class="navbar-item navbar-button btn">Intranet</a>';
-                echo '<a style="float:right;" class="navbar-item navbar-button btn"<a href="../adminform.php" style="text-decoration:none">Create user</a>';
+                echo '<a style="float:right;" class="navbar-item navbar-button btn"<a href="../adminform.php">Create user</a>';
             } else {
                 echo'<a style="float:right;" class="navbar-item navbar-button btn" href="../logout.php">logout</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" class="link1 navbar-item navbar-button btn" type="submit" href="../intranet.php" class="navbar-item navbar-button btn">Intranet</a>';
             }
           } else {
-                echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../adminform.php" style="text-decoration:none">Admin</a>';
+                echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../adminform.php">Admin</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" class="navbar-item navbar-button btn" href="../intranet.php" class="navbar-item navbar-button btn">Intranet</a>';
           }
             
