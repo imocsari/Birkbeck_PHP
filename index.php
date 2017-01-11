@@ -28,4 +28,4 @@ if (isset($_SESSION['is_auth'])) {
     </div>
    </body>
 <?php include("layouts/footer.php"); ?>
- </html>
+</html>
