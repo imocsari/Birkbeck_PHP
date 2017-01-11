@@ -1,2 +1,3 @@
 admin,DCSadmin01
 fradi,12
+fradi,anyad,imremocsari1@yahoo.co.uk,mr,bela,bubanat

@@ -98,7 +98,7 @@ class Login
 	 return true;
 	}
 	function validEmail($email) {
-    if ($email == ($_POST['email'])) {
+    if (($_SESSION['email']) == ($_POST['email'])) {
       return false;
     }
 		if ($email == '') { #email field can not be blank
@@ -111,12 +111,12 @@ class Login
   }
 		
 	function validUserName($username) { 
-    if ($username == ($_POST['username'])) { #username can not be a username already stored in the system
+    if (($_SESSION['username']) == ($_POST['username'])) { #username can not be a username already stored in the system
       return false;
     }
-    if (!ctype_alnum($username)) {
-    	return false;
-    }
+    // if (!ctype_alnum($username)) {
+    // 	return false;
+    // }
     if ($username == '') { #can not be empty
 		  return false;
 		}
@@ -127,6 +127,7 @@ class Login
 			return false;
 		}
 	 return true;
+   echo ($SESSION['username']);
 	}
 		
   function validPassword($password) { 
@@ -187,9 +188,6 @@ class Login
 					$html = htmlentities($trimmed);
 					if (validEmail($html)) {
 						$CleanData['email'] = $html;
-				} elseif ($email == ($_POST['email'])) {
-						$errors['email'] = 'Email already exist!';
-					
 				} else {
             $errors['email'] = ' is incorrect value';
       } 
@@ -227,7 +225,7 @@ class Login
         $save = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
         
 			# processing the valid data
-				echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>No errors detected.  Thank you for submitting :)</p></div>';
+				echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>No errors detected.  Thank you for submitting!</p></div>';
         header("Refresh: 2; url=adminform.php");
 			} else { 
 				if (!empty($errors)) {

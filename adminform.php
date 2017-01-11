@@ -9,9 +9,9 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <title>admin</title>
 </head>
 <body>
   <section class="loginform">
