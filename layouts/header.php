@@ -17,7 +17,7 @@ session_start();
               if($_SESSION['username'] == "admin") {
                 echo'<a style="float:right;" class="navbar-item navbar-button btn" href="../logout.php">logout</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../intranet.php">Intranet</a>';
-                echo '<a style="float:right;" class="navbar-item navbar-button btn"<a href="../adminform.php">Create user</a>';
+                echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../adminform.php">Create user</a>';
             } else {
                 echo'<a style="float:right;" class="navbar-item navbar-button btn" href="../logout.php">logout</a>';
                 echo '<a style="float:right;"class="link1 navbar-item navbar-button btn" type="submit" href="../intranet.php">Intranet</a>';
