@@ -1,6 +1,6 @@
 <?php #intranet pages P1 results, the page visible after login
 session_start();
-require_once '../includes.php';
+require_once '../functions/includes.php';
 include("../layouts/header.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = (new Login())->logout();

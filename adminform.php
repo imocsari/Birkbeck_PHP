@@ -1,5 +1,5 @@
 <?php #This file is the form for admin to register a new user
-require_once 'includes.php';
+require_once 'functions/includes.php';
 include("layouts/header.php");
 if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
     header("Location: login.php");

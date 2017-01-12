@@ -1,0 +1,2 @@
+admin,DCSadmin01
+segg,Fej5,szajba@te.majom,mr,anyad,baszd

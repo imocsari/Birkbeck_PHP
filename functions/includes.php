@@ -29,7 +29,7 @@ class Login
   }
   #approve function comparing the username and password with the stored username and password.
   private function approve() { 
-    $content = file_get_contents("users.txt");
+    $content = file_get_contents("data/users.txt");
     $data = explode("\n", $content);
 
     foreach ($data as $row => $data) {
@@ -95,7 +95,7 @@ class Login
 	 return true;
 	}
 	function validEmail($email) {
-    if( strpos(file_get_contents("users.txt"),$_POST['email']) !== false) {
+    if( strpos(file_get_contents("data/users.txt"),$_POST['email']) !== false) {
       return false;
     }
 		if ($email == '') { #email field can not be blank
@@ -111,7 +111,7 @@ class Login
     if (strpbrk($username, '#$%^&*()+=[];,.-!/{}|:<>?~') !== false) { #surname can not include number and special characters
       return false;
     }
-    if( strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
+    if( strpos(file_get_contents("data/users.txt"),$_POST['username']) !== false) {
       return false;
     }
     if ($username == '') { #can not be empty
@@ -195,7 +195,7 @@ class Login
 					if (validEmail($html)) {
 						$CleanData['email'] = $html;
 				} else {
-          if (strpos(file_get_contents("users.txt"),$_POST['email']) !== false) {
+          if (strpos(file_get_contents("data/users.txt"),$_POST['email']) !== false) {
             $errors['email'] = $html . ' already exist!';
           }
           else {
@@ -212,7 +212,7 @@ class Login
 					if (validUserName($html)) {
 						$CleanData['username'] = $html;
 					} else {
-              if (strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
+              if (strpos(file_get_contents("data/users.txt"),$_POST['username']) !== false) {
                 $errors['username'] = $html . ' already exist!';
               }
               else {
@@ -228,7 +228,7 @@ class Login
 					if (validPassword($html)) {
 						$CleanData['password'] = $html;
 					} else {
-						$errors['password'] = $html . ' is incorrect value.';
+						$errors['password'] = $html . 'must contain at least 1 uppercase, 1 number and 1 lowercase letter!';
 					}
 				} else {
 						$errors['password'] = 'not submitted.';
@@ -238,7 +238,7 @@ class Login
 			#processing clean or invalid data				
 			if ($submitted === true && empty($errors)) {
         $data = $_POST['username'] . ',' . $_POST['password'] . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
-        $save = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
+        $save = file_put_contents('data/users.txt', $data, FILE_APPEND | LOCK_EX);
         
 			# processing the valid data
 				echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>No errors detected.  Thank you for submitting!</p></div>';

@@ -1,5 +1,5 @@
 <?php #This is the intranet front page, where user able to come without logging in, or if the user already logged in, will able to see the results of the different modules without logging in.
-require 'includes.php';
+require 'functions/includes.php';
 include("layouts/header.php");
 if (isset($_SESSION['is_auth'])) {
     $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';

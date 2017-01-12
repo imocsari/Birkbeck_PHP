@@ -1,5 +1,5 @@
 <?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module, index page of the system
-require 'includes.php';
+require 'functions/includes.php';
 include("layouts/header.php");
 
 if(!empty($_GET['status'])){
