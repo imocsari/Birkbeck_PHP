@@ -46,30 +46,14 @@ class Login
    }
    
   }
-  
- function valid() { 
-    $content = file_get_contents("users.txt");
-    $data = explode("\n", $content);
-
-    foreach ($data as $row => $data) {
-      $user_data = explode(',', $data);
-      $user = @($user_data[0]);
-      if (strcmp($user,($_POST['username'])) === 0) {
-          return false;
-      }
-    }
-  }
 
 #function valid Title validating the title of the form. 
   function validTitle($title) { 
 	 if ($title == '') { #title can not be empty
 		return false;
    }
-   if (!ctype_alnum($title)) { #title can not include special characters
-		return false;
-	 }
-   if (ctype_digit($title)) { #title can not include numbers
-    return false;
+   if (strpbrk($title, '1234567890#$%^&*()+=[];,/{}|:<>?~') !== false) { #title can not include number and special characters
+     return false;
 	 }
    if (strlen($title) < 2) { #title Length has to be more then 2 characters
     return false;
@@ -84,12 +68,12 @@ class Login
 	  if ($firstname == '') { #can not be empty
 		  return false;
 		}
+    if (strpbrk($firstname, '1234567890#$%^&*()+=[];,./{}|:<>?~!') !== false) { #firstname can not include number and special characters
+      return false;
+    }
 		if (strlen($firstname) > 30) { #firstname can not be longer than 30 characters
 		  return false;
 		}
-    if (ctype_digit($firstname)) { #firstname can not include numbers
-      return false;
-    }
     if (strlen($firstname) < 2) { #firstname can not be shorter than 2 characters
 		  return false;
 		}
@@ -98,8 +82,8 @@ class Login
   function validSurName($surname) { 
 	  if ($surname == '') {  #can not be empty
 			return false;
-		}  
-    if (ctype_digit($surname)) { #surname can not include numbers
+		}
+    if (strpbrk($surname, '1234567890#$%^&*()+=[];,./{}|:<>?~!') !== false) { #surname can not include number and special characters
       return false;
     }
     if (strlen($surname) < 2) { #surname can not be shorter than 2 characters
@@ -124,6 +108,9 @@ class Login
   }
 		
 	function validUserName($username) { 
+    if (strpbrk($username, '#$%^&*()+=[];,.-!/{}|:<>?~') !== false) { #surname can not include number and special characters
+      return false;
+    }
     if( strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
       return false;
     }
@@ -146,19 +133,29 @@ class Login
 		if (strlen($password) > 30) { #can not be longer then 30 characters
 			return false;
 		}
+    if (strlen($password) < 3) { #can not be shorter then 3 characters
+      return false;
+    }
+    if (strpbrk($password, '1234567890') == false) {
+        return false;
+    } elseif (strpbrk($password, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == false) {
+        return false;
+    } else {
+        return true;
+    }
 	 return true;
 	}
 ?>
 <?php
 			$self = htmlentities($_SERVER['PHP_SELF']); #get the path and file name of this file
-			$form_is_submitted = false; #whether form in this file has been submitted
-			$errors_detected = false;	#whether data errorsvdetected in the form
+			$submitted = false; #whether form in this file has been submitted
+			$errors_detected = false;	#whether data errors detected in the form
 			$CleanData = array(); 	#holds valid data
 			$errors = array();		#holds details of any invalid data
 			
 			if (isset($_POST['SubmitStatus'])) { 
 			#validating the form data if the form submitted
-				$form_is_submitted = true;
+				$submitted = true;
 				if (isset($_POST['firstname'])) { #validate the firstname field
 					$trimmed = trim($_POST['firstname']);
 					$html = htmlentities($trimmed);
@@ -199,7 +196,7 @@ class Login
 						$CleanData['email'] = $html;
 				} else {
           if (strpos(file_get_contents("users.txt"),$_POST['email']) !== false) {
-            $errors['email'] = $html . ' already exist!.';
+            $errors['email'] = $html . ' already exist!';
           }
           else {
             $errors['email'] = $html . ' is incorrect value.';
@@ -216,7 +213,7 @@ class Login
 						$CleanData['username'] = $html;
 					} else {
               if (strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
-                $errors['username'] = $html . ' already exist!.';
+                $errors['username'] = $html . ' already exist!';
               }
               else {
 						    $errors['username'] = $html . ' is incorrect value.';
@@ -239,7 +236,7 @@ class Login
 			} #end of code to validate data
 			
 			#processing clean or invalid data				
-			if ($form_is_submitted === true && empty($errors)) {
+			if ($submitted === true && empty($errors)) {
         $data = $_POST['username'] . ',' . $_POST['password'] . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
         $save = file_put_contents('users.txt', $data, FILE_APPEND | LOCK_EX);
         

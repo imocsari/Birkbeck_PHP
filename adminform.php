@@ -76,8 +76,8 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
             type="text" 
             name="username" 
             id="username" 
-            placeholder="Username(letters or digits only!)"
-            size="35"/>
+            placeholder="username"
+            size="35"/>)
             <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $usernameError . '</span>'?>
         </div>
         <div>
@@ -86,7 +86,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
             type="text" 
             name="password" 
             id="password"
-            placeholder="**********" 
+            placeholder="********** (must include at least 1 number and 1 uppercase letter)" 
             size="35"/>
             <?php echo '<br><span style="color:#ff8c8c; font-size:22px; font-weight:bold;">' . $passwordError . '</span>'?>
         </div>
