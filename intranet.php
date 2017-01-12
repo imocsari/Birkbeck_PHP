@@ -8,21 +8,6 @@ if (isset($_SESSION['is_auth'])) {
 
 ?>
 
-
-
-
-<!-- <!DOCTYPE html> -->
- <!-- <html>
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="../stylesheets/card.css">
-     <title>intranet</title>
-   </head>
-   <br> -->
-   <!-- <body> -->
       <h2 class="text-center">INTRANET</h2>
        <div class="container">
          <div class="row">
@@ -55,6 +40,4 @@ if (isset($_SESSION['is_auth'])) {
            </div>
          </div>
        </div>
-   <!-- </body> -->
       <?php include("layouts/footer.php"); ?>
- <!-- </html> -->
