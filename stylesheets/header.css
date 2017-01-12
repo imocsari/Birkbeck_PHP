@@ -11,14 +11,14 @@
 /* Navbar right button */
 .navbar-button {
   margin: 10px 10px;
-  padding: 30px 30px;
-  border-radius: 20em;
-  line-height: 40px;
+  padding: 10px 10px;
+  border-radius: 0.2em;
+  /*line-height: 40px;*/
   background-color: #443850;
   color: white;
   font-size: 16px;
   border: 2px solid #443850;
-  text-align: right;
+  /*text-align: right;*/
 }
 .navbar-button:hover {
   color: white;

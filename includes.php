@@ -46,6 +46,19 @@ class Login
    }
    
   }
+  
+ function valid() { 
+    $content = file_get_contents("users.txt");
+    $data = explode("\n", $content);
+
+    foreach ($data as $row => $data) {
+      $user_data = explode(',', $data);
+      $user = @($user_data[0]);
+      if (strcmp($user,($_POST['username'])) === 0) {
+          return false;
+      }
+    }
+  }
 
 #function valid Title validating the title of the form. 
   function validTitle($title) { 
@@ -98,7 +111,7 @@ class Login
 	 return true;
 	}
 	function validEmail($email) {
-    if (($_SESSION['email']) == ($_POST['email'])) {
+    if( strpos(file_get_contents("users.txt"),$_POST['email']) !== false) {
       return false;
     }
 		if ($email == '') { #email field can not be blank
@@ -111,12 +124,9 @@ class Login
   }
 		
 	function validUserName($username) { 
-    if (($_SESSION['username']) == ($_POST['username'])) { #username can not be a username already stored in the system
+    if( strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
       return false;
     }
-    // if (!ctype_alnum($username)) {
-    // 	return false;
-    // }
     if ($username == '') { #can not be empty
 		  return false;
 		}
@@ -127,7 +137,6 @@ class Login
 			return false;
 		}
 	 return true;
-   echo ($SESSION['username']);
 	}
 		
   function validPassword($password) { 
@@ -189,7 +198,12 @@ class Login
 					if (validEmail($html)) {
 						$CleanData['email'] = $html;
 				} else {
-            $errors['email'] = ' is incorrect value';
+          if (strpos(file_get_contents("users.txt"),$_POST['email']) !== false) {
+            $errors['email'] = $html . ' already exist!.';
+          }
+          else {
+            $errors['email'] = $html . ' is incorrect value.';
+        }
       } 
     } else {
 						$errors['email'] = 'not submitted.';
@@ -201,7 +215,12 @@ class Login
 					if (validUserName($html)) {
 						$CleanData['username'] = $html;
 					} else {
-						$errors['username'] = $html . ' is incorrect value or username already exist.';
+              if (strpos(file_get_contents("users.txt"),$_POST['username']) !== false) {
+                $errors['username'] = $html . ' already exist!.';
+              }
+              else {
+						    $errors['username'] = $html . ' is incorrect value.';
+            }
 					}
 				} else {
 						$errors['username'] = 'not submitted.';

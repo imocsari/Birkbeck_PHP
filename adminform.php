@@ -5,14 +5,15 @@ include("layouts/header.php");
 if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
     header("Location: login.php");
 }
+
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
+  <title>Login</title>
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <title>admin</title>
-</head> -->
+</head>
 <body>
   <section class="loginform">
     <?php
@@ -29,7 +30,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
     ?>
   </section>
   <div class="text-center">
-    <form action="<?php echo $self; ?>" method="post"> <!-- This file will receive the data; post means data will be passed to server as a seperate file -->
+    <form action="<?php echo $self; ?>" method="post"> 
       <fieldset>
         <div>  
           <label for="title">Title</label></br>
@@ -98,4 +99,4 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
   </div>
 </body>
 <?php include("layouts/footer.php"); ?>
-<!-- </html> -->
+</html>

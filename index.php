@@ -11,14 +11,14 @@ if (isset($_SESSION['is_auth'])) {
 }
 ?>
 <!-- This is the front page of the application, including the login function, header and footer -->
-<!-- <!DOCTYPE html> -->
-<!-- <html>
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <title>index</title>
-  </head> -->
+    <title></title>
+  </head>
   <body>
     <div class="text">
      <h3>The Department of <b style="color:#fcab0e;">Computer Science</b> and Information Systems at Birkbeck</h3>
@@ -28,4 +28,4 @@ if (isset($_SESSION['is_auth'])) {
     </div>
    </body>
 <?php include("layouts/footer.php"); ?>
- <!-- </html> -->
+ </html>

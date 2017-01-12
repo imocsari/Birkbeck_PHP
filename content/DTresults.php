@@ -13,13 +13,13 @@ if (!isset($_SESSION['is_auth'])) {
     header("Location: ../login.php");
     die;
 } else {
-    $name = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
-    echo $name;
+    $r = '<div class="welcome text-center"><b>' . 'Welcome ' . $_SESSION['username'] . ' to Intranet! </b></div>';
+    echo $r;
 }
 ?>
-<!doctype html>
+<!-- <!doctype html>
 <html>
-	<head>
+	<head> -->
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -104,4 +104,4 @@ if (!isset($_SESSION['is_auth'])) {
 		</div>
 	</body>
 <?php include("../layouts/footer.php"); ?>
-</html>
+<!-- </html> -->

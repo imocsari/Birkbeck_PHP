@@ -6,8 +6,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../stylesheets/header.css">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <link rel="stylesheet" href="../stylesheets/card.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <title>header</title>
   </head>
@@ -27,8 +26,10 @@ session_start();
           } else {
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../adminform.php">Admin</a>';
                 echo '<a style="float:right;" class="navbar-item navbar-button btn" href="../intranet.php">Intranet</a>';
-          }  
+          }
+            
+          
       ?>
     </div>
   </body>
-<!-- </html> -->
+</html>
