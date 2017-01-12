@@ -228,7 +228,7 @@ class Login
 					if (validPassword($html)) {
 						$CleanData['password'] = $html;
 					} else {
-						$errors['password'] = $html . 'must contain at least 1 uppercase, 1 number and 1 lowercase letter!';
+						$errors['password'] = 'must contain 1 uppercase, 1 number, 1 lowercase letter!';
 					}
 				} else {
 						$errors['password'] = 'not submitted.';
