@@ -22,6 +22,7 @@ if (!isset($_SESSION['is_auth'])){
 	<head>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../stylesheets/card.css">
     <link rel="stylesheet" href="../stylesheets/content.css">
 		<meta charset="utf-8">
