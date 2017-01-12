@@ -1,5 +1,4 @@
 <?php #this is a login page where login form displayed to the user 
-session_start();
 require_once 'includes.php'; 
 include 'layouts/header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

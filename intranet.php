@@ -1,5 +1,4 @@
 <?php #This is the intranet front page, where user able to come without logging in, or if the user already logged in, will able to see the results of the different modules without logging in.
-session_start();
 require 'includes.php';
 include("layouts/header.php");
 if (isset($_SESSION['is_auth'])) {

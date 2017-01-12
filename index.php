@@ -1,5 +1,4 @@
 <?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module
-// session_start();
 include("layouts/header.php");
 require 'includes.php';
 if(!empty($_GET['status'])){

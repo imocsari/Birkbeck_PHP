@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'includes.php';
 include("layouts/header.php");
 if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
