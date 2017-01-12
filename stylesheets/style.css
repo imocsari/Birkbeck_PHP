@@ -121,7 +121,7 @@ select {
   text-align: center;
 }
 
-.text {
+.maintext {
   font-weight:300;
   text-align: center;
   font-size: 25px;
@@ -131,7 +131,7 @@ select {
   opacity: 0.9;
 }
 
-.text h3 {
+.maintext h3 {
   font-size: 50px;
   padding-bottom: 100px;
 }
