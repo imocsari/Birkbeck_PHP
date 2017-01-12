@@ -7,15 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     die;
 }
 ?>
-<!-- <!DOCTYPE html> -->
-<!-- <html>
-  <head>
-      <title>Login</title>
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="stylesheets/style.css">
-      <title>login</title>
-  </head> -->
-  <!-- <body > -->
     <div class="container">
       <div class="row">
         <div id="box">
@@ -40,6 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
       </div>
     </div>
-  <!-- </body> -->
 <?php include 'layouts/footer.php'; ?>
-<!-- </html> -->

@@ -1,3 +1,4 @@
+<!-- This is a footer for all the pages -->
     <div class="footer">
       <div class="container">
         <div class="row">

@@ -7,7 +7,6 @@ if (isset($_SESSION['is_auth'])) {
 }
 
 ?>
-
       <h2 class="text-center">INTRANET</h2>
        <div class="container">
          <div class="row">

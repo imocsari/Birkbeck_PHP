@@ -1,4 +1,4 @@
-<?php
+<?php #intranet pages P1 results, the page visible after login
 session_start();
 require_once '../includes.php';
 include("../layouts/header.php");

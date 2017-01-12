@@ -1,4 +1,4 @@
-<?php
+<?php #This is the header for all the pages, user can log in and out of the system from the header.
 session_start();
 ?>
 <!DOCTYPE html>
@@ -35,5 +35,3 @@ session_start();
           
       ?>
     </div>
-  <!-- </body>
-</html> -->

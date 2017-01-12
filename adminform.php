@@ -1,4 +1,4 @@
-<?php
+<?php #This file is the form for admin to register a new user
 require_once 'includes.php';
 include("layouts/header.php");
 if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false)) {
@@ -6,14 +6,6 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
 }
 
 ?>
-<!-- <!DOCTYPE html> -->
-<!-- <html>
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-</head> -->
-<!-- <body> -->
   <section class="loginform">
     <?php
       if (!isset($_SESSION['is_auth'])) {
@@ -96,6 +88,4 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
       </fieldset>
     </form>
   </div>
-<!-- </body> -->
 <?php include("layouts/footer.php"); ?>
-<!-- </html> -->

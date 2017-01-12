@@ -1,4 +1,4 @@
-<?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module
+<?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module, index page of the system
 require 'includes.php';
 include("layouts/header.php");
 
