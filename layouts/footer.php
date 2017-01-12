@@ -10,6 +10,7 @@
         <div class="container">
         	<div class="row">
             <div class="footer_dv">
+              <p></p>
             </div>
           </div>
         </div>
