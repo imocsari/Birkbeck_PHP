@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <link rel="stylesheet" href="stylesheets/style.css">
       <title>login</title>
   </head> -->
-  <body >
+  <!-- <body > -->
     <div class="container">
       <div class="row">
         <div id="box">
@@ -41,6 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
       </div>
     </div>
-  </body>
+  <!-- </body> -->
 <?php include 'layouts/footer.php'; ?>
 <!-- </html> -->

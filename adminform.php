@@ -14,7 +14,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head> -->
-<body>
+<!-- <body> -->
   <section class="loginform">
     <?php
       if (!isset($_SESSION['is_auth'])) {
@@ -97,6 +97,6 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
       </fieldset>
     </form>
   </div>
-</body>
+<!-- </body> -->
 <?php include("layouts/footer.php"); ?>
 <!-- </html> -->

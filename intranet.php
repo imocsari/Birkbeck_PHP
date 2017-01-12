@@ -23,7 +23,7 @@ if (isset($_SESSION['is_auth'])) {
      <title>intranet</title>
    </head>
    <br> -->
-   <body>
+   <!-- <body> -->
       <h2 class="text-center">INTRANET</h2>
        <div class="container">
          <div class="row">
@@ -56,6 +56,6 @@ if (isset($_SESSION['is_auth'])) {
            </div>
          </div>
        </div>
-   </body>
+   <!-- </body> -->
       <?php include("layouts/footer.php"); ?>
  <!-- </html> -->
