@@ -10,7 +10,6 @@ if (isset($_SESSION['is_auth'])) {
     echo $name;
 }
 ?>
-<!-- This is the front page of the application, including the login function, header and footer -->
 <!DOCTYPE html>
 <html>
   <head>

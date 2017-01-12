@@ -4,7 +4,7 @@
   background: #C0C5C1;
   transition: all 0.3s ease;
   padding: 25px 25px;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   border-bottom: 4px solid #fcab0e;
 }
 

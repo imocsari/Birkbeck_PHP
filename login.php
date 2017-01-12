@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <title>Login</title>
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="stylesheets/style.css">
-      <link rel="stylesheet" href="stylesheets/header.css">
       <title>login</title>
   </head>
   <body >
