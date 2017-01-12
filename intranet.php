@@ -13,7 +13,7 @@ if (isset($_SESSION['is_auth'])) {
 
 
 <!-- <!DOCTYPE html> -->
- <html>
+ <!-- <html>
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
@@ -22,7 +22,7 @@ if (isset($_SESSION['is_auth'])) {
      <link rel="stylesheet" href="../stylesheets/card.css">
      <title>intranet</title>
    </head>
-   <br>
+   <br> -->
    <body>
       <h2 class="text-center">INTRANET</h2>
        <div class="container">
@@ -58,4 +58,4 @@ if (isset($_SESSION['is_auth'])) {
        </div>
    </body>
       <?php include("layouts/footer.php"); ?>
- </html>
+ <!-- </html> -->
