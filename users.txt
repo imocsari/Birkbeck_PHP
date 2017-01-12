@@ -1,15 +1,2 @@
 admin,DCSadmin01
 fradi,12
-fradi,anyad,imremocsari1@yahoo.co.uk,mr,bela,bubanat
-fradi,12345,imremocsari@yahoo.com,mr,Imre,Mocsari
-fradi,12345,imremocsari@yahoo.com,mr,Imre,Mocsari
-fradi,12345,imremocsari@yahoo.com,mr,Imre,Mocsari
-asdfa,sdgasdg,imremocsari@yahoo.com,fasd,fasdfa,asdaga
-asdgadfhwder,asdgsdfh,imremocsari@yahoo.com,mr,Imre,Mocsari
-sdfbsdhdsfb,12345,imremocsari@yahoo.com,mr,asdfa,asdfa
-asdgasdg,asdgsag,imremocsari@yahoo.com,asdgasdg,gasdfgasd,agasdg
-asdgsdg,asdfaaq,imremocsari@yahoo.com,afsdfa,asga,asdgaf
-asgwgrfwer,afsdfsrgsf,imremocsari@yahoo.com,afsdfa,asgdasdfg,asfgasd
-gasdaggr,sdgasdggasd,imremocsari5@yahoo.com,afsdfasd,asdgasdg,asfgder
-bani,sdfsdgsfg,imremocsari6@yahoo.com,fasdfadfa,asdgasd,fgdfvasdf
-banbi,fasdt4eaa,imremocsari3@yahoo.co.uk,asdfasdf,asgasdg,sgasgfd

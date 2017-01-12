@@ -1,6 +1,7 @@
 <?php #Imre Mocsari FMA coursework for Web Programming using PHP (2016_17) module
-include("layouts/header.php");
 require 'includes.php';
+include("layouts/header.php");
+
 if(!empty($_GET['status'])){
   echo '<div style="padding-top:200px; padding-bottom:800px; font-weight: bold; color: white; text-align:center; font-size:30px"><p>Successfully logged out!</p><br><p style="padding-top:50px;">Redirecting to homepage!</p></div>';
   header("Refresh: 1; url=index.php");
