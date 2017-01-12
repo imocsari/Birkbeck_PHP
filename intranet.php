@@ -12,7 +12,7 @@ if (isset($_SESSION['is_auth'])) {
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
  <html>
    <head>
      <meta charset="utf-8">

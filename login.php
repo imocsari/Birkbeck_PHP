@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     die;
 }
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
   <head>
       <title>Login</title>

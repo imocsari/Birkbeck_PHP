@@ -7,7 +7,7 @@ if ((($_SESSION['username']) != 'admin') || ($_SESSION['is_logged_in'] = false))
 }
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
   <title>Login</title>
