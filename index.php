@@ -10,15 +10,11 @@ if (isset($_SESSION['is_auth'])) {
     echo $name;
 }
 ?>
-<!DOCTYPE html>
-<html>
-<body>
+
   <div class="maintext">
     <h3>The Department of <b style="color:#fcab0e;">Computer Science</b> and Information Systems at Birkbeck</h3>
       <div id="secondline">
         <p>One of the first computing departments established in the UK and we will be celebrating our 60th anniversary in 2017. We provide a stimulating teaching and research environment for both part-time and full-time students, and a friendly, inclusive space for learning, working and collaborating.</p>
       </div>
-  <?php include("layouts/footer.php"); ?>
   </div>
-</body>
-</html>
+  <?php include("layouts/footer.php"); ?>
