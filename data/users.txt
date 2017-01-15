@@ -1,4 +1,1 @@
-admin,DCSadmin01
-segg,Fej5,szajba@te.majom,mr,anyad,baszd
-asdfasd,,asdfe@sdfsgd.com,asdf,asdf,asdfa
-asdfge,afasd,imremocsari@yahoo.com,fa,asd,fas
+admin,0f05e7e93885940f5058537b62b42294

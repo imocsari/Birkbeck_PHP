@@ -1,5 +1,6 @@
 <?php #This is the header for all the pages, user can log in and out of the system from the header.
 session_start();
+session_regenerate_id(true);
 ?>
 <!DOCTYPE html>
 <html>

@@ -38,7 +38,7 @@ class Login
       $this->pass = @trim(($user_data[1]), "\r");
         if (empty(($_POST['username']) || ($_POST['password']))) {
           return false;
-      } elseif (strcmp($this->user, $this->loginname) === 0 && strcmp($this->pass, $this->loginpass) === 0) {
+      } elseif (strcmp($this->user, $this->loginname) === 0 && strcmp($this->pass, md5($this->loginpass)) === 0) {
           return true;
       }
     }
@@ -237,7 +237,7 @@ class Login
 			
 			#processing clean or invalid data				
 			if ($submitted === true && empty($errors)) {
-        $data = $_POST['username'] . ',' . $_POST['password'] . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
+        $data = $_POST['username'] . ',' . md5($_POST['password']) . ',' . $_POST['email'] . ',' . $_POST['title'] . ',' . $_POST['firstname'] .  ',' . $_POST['surname'] . "\n";
         $save = file_put_contents('data/users.txt', $data, FILE_APPEND | LOCK_EX);
         
 			# processing the valid data
